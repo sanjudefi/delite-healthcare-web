@@ -25,8 +25,8 @@
       "dest": "/index.html"
     },
     {
-      "src": "/who-we-are",
-      "dest": "/who-we-are.html"
+      "src": "/our-story",
+      "dest": "/our-story.html"
     },
     {
       "src": "/our-care-solutions",
