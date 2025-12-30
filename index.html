@@ -9,341 +9,658 @@
     <meta name="description" content="Delite Health Care Plus LLC provides exceptional patient-centered healthcare services in Burlington, MA. Skilled nursing, home care, and professional medical staffing solutions tailored to your needs.">
     <meta name="keywords" content="healthcare services, Burlington MA healthcare, home health care, skilled nursing, medical staffing, patient care, Delite Health Care Plus, Massachusetts healthcare">
     <meta name="robots" content="index, follow">
-    <meta name="author" content="Delite Health Care Plus LLC">
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.DeliteHealthCare.com/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.DeliteHealthCare.com/">
-    <meta property="og:title" content="Delite Health Care Plus LLC | Premier Healthcare Services in Burlington, MA">
+    <meta property="og:title" content="Delite Health Care Plus LLC | Premier Healthcare Services">
     <meta property="og:description" content="Exceptional patient-centered healthcare services including skilled nursing, home care, and professional medical staffing in Burlington, Massachusetts.">
     <meta property="og:image" content="https://www.DeliteHealthCare.com/public/images/logo.jpeg">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:site_name" content="Delite Health Care Plus LLC">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://www.DeliteHealthCare.com/">
     <meta name="twitter:title" content="Delite Health Care Plus LLC | Premier Healthcare Services">
-    <meta name="twitter:description" content="Exceptional patient-centered healthcare services in Burlington, MA. Skilled nursing, home care, and professional medical staffing.">
-    <meta name="twitter:image" content="https://www.DeliteHealthCare.com/public/images/logo.jpeg">
+    <meta name="twitter:description" content="Exceptional patient-centered healthcare services in Burlington, MA.">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/jpeg" href="public/images/logo.jpeg">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="css/styles.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css">
 
-    <!-- JSON-LD Schema Markup -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "MedicalOrganization",
-        "name": "Delite Health Care Plus LLC",
-        "url": "https://www.DeliteHealthCare.com",
-        "logo": "https://www.DeliteHealthCare.com/public/images/logo.jpeg",
-        "description": "Premier healthcare services provider in Burlington, MA offering patient-centered care, skilled nursing, and professional medical staffing.",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1500 District Avenue",
-            "addressLocality": "Burlington",
-            "addressRegion": "MA",
-            "postalCode": "01803",
-            "addressCountry": "US"
-        },
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+1-781-967-4014",
-            "contactType": "Customer Service",
-            "email": "Nasifk@delitehealthcare.com",
-            "areaServed": "US",
-            "availableLanguage": "English"
-        },
-        "sameAs": [
-            "https://www.DeliteHealthCare.com"
-        ]
-    }
-    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Delite Health Care Plus LLC",
-        "image": "https://www.DeliteHealthCare.com/public/images/logo.jpeg",
-        "priceRange": "$$",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1500 District Avenue",
-            "addressLocality": "Burlington",
-            "addressRegion": "MA",
-            "postalCode": "01803",
-            "addressCountry": "US"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 42.5047,
-            "longitude": -71.1956
-        },
-        "telephone": "+1-781-967-4014",
-        "email": "Nasifk@delitehealthcare.com",
-        "url": "https://www.DeliteHealthCare.com",
-        "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday"
-            ],
-            "opens": "08:00",
-            "closes": "18:00"
+    <style>
+        :root {
+            --primary-blue: #2563eb;
+            --dark-blue: #1e40af;
+            --light-blue: #dbeafe;
+            --accent-red: #dc2626;
+            --text-dark: #1f2937;
         }
-    }
-    </script>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: var(--primary-blue);
+            color: white;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+
+        .top-bar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .top-bar a:hover {
+            opacity: 0.8;
+        }
+
+        /* Header / Navigation */
+        .navbar {
+            background: white !important;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            padding: 15px 0;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-blue) !important;
+        }
+
+        .navbar-brand img {
+            height: 55px;
+            width: 55px;
+            object-fit: contain;
+        }
+
+        .navbar-brand .brand-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .brand-text .brand-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .brand-text .brand-tagline {
+            font-size: 0.7rem;
+            font-weight: 400;
+            color: var(--accent-red);
+            letter-spacing: 1px;
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            color: var(--text-dark) !important;
+            padding: 10px 18px !important;
+            margin: 0 5px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            background: var(--light-blue);
+            color: var(--primary-blue) !important;
+        }
+
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            border-radius: 10px;
+            padding: 10px 0;
+        }
+
+        .dropdown-item {
+            padding: 10px 25px;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background: var(--light-blue);
+            color: var(--primary-blue);
+            padding-left: 30px;
+        }
+
+        /* Hero Slider */
+        .hero-slider {
+            position: relative;
+            height: 600px;
+            overflow: hidden;
+        }
+
+        .carousel-item {
+            height: 600px;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.85) 0%, rgba(30, 64, 175, 0.75) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-content {
+            text-align: center;
+            color: white;
+            max-width: 800px;
+            padding: 20px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .carousel-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .carousel-content p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 60px;
+            height: 60px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .carousel-control-prev {
+            left: 30px;
+        }
+
+        .carousel-control-next {
+            right: 30px;
+        }
+
+        /* Buttons */
+        .btn-custom-primary {
+            background: var(--accent-red);
+            color: white;
+            padding: 12px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            border: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+        }
+
+        .btn-custom-primary:hover {
+            background: #b91c1c;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+            color: white;
+        }
+
+        .btn-custom-outline {
+            background: transparent;
+            color: white;
+            padding: 12px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            border: 2px solid white;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom-outline:hover {
+            background: white;
+            color: var(--primary-blue);
+        }
+
+        /* Cards Section */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: #6b7280;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+            border: 1px solid #f3f4f6;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .service-card .icon {
+            font-size: 3.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--dark-blue);
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: #6b7280;
+            line-height: 1.8;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: white;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .stat-box .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .stat-box .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-blue);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        footer h5 {
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #dbeafe;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        footer a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 40px;
+            padding-top: 20px;
+            text-align: center;
+            color: #dbeafe;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .carousel-content h1 {
+                font-size: 2rem;
+            }
+
+            .carousel-content p {
+                font-size: 1rem;
+            }
+
+            .hero-slider, .carousel-item {
+                height: 500px;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .stat-box .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Skip to Content Link for Accessibility -->
-    <a href="#main-content" class="skip-to-content">Skip to main content</a>
-
-    <!-- Header -->
-    <header>
-        <!-- Top Bar -->
-        <div class="header-top">
-            <div class="container">
-                <div class="contact-info">
-                    <a href="tel:+17819674014">📞 +1 (781) 967-4014</a>
-                    <a href="mailto:Nasifk@delitehealthcare.com">📧 Nasifk@delitehealthcare.com</a>
-                </div>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center flex-wrap">
                 <div>
-                    <span>1500 District Avenue, Burlington, MA 01803</span>
+                    <a href="tel:+17819674014"><i class="bi bi-telephone-fill"></i> +1 (781) 967-4014</a>
+                    <a href="mailto:Nasifk@delitehealthcare.com"><i class="bi bi-envelope-fill"></i> Nasifk@delitehealthcare.com</a>
+                </div>
+                <div class="d-none d-md-block">
+                    <small>1500 District Avenue, Burlington, MA 01803</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="public/images/logo.jpeg" alt="Delite Health Care Plus Logo">
+                <div class="brand-text">
+                    <span class="brand-name">DELITE HEALTH</span>
+                    <span class="brand-tagline">CARE PLUS LLC</span>
+                </div>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="our-story.html">Our Story</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="our-care-solutions.html#skilled-nursing">Skilled Nursing Care</a></li>
+                            <li><a class="dropdown-item" href="our-care-solutions.html#personal-care">Personal Care Assistance</a></li>
+                            <li><a class="dropdown-item" href="our-care-solutions.html#rehabilitation">Rehabilitation Services</a></li>
+                            <li><a class="dropdown-item" href="our-care-solutions.html#companion">Companion Care</a></li>
+                            <li><a class="dropdown-item" href="our-care-solutions.html#staffing">Medical Staffing</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="our-care-solutions.html">View All Services</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="why-delite.html">Why Choose Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="join-our-team.html">Careers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="get-in-touch.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Slider -->
+    <div id="heroCarousel" class="carousel slide hero-slider" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+                <img src="public/images/slides/elderly-woman-laughing--nurse.jpg.webp" alt="Elder Care">
+                <div class="carousel-overlay">
+                    <div class="carousel-content">
+                        <h1>Compassionate Healthcare for Every Life Stage</h1>
+                        <p>Delivering excellence in patient-centered care through skilled professionals and unwavering dedication to your health and wellbeing</p>
+                        <a href="our-care-solutions.html" class="btn btn-custom-primary me-3">Explore Services</a>
+                        <a href="get-in-touch.html" class="btn btn-custom-outline">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <img src="public/images/slides/-elderly-man-smiling-while-talking-to-a-caregiver.jpg.webp" alt="Home Health Care">
+                <div class="carousel-overlay">
+                    <div class="carousel-content">
+                        <h1>Expert Care in the Comfort of Home</h1>
+                        <p>Professional healthcare services delivered with compassion, expertise, and personalized attention for you and your loved ones</p>
+                        <a href="our-care-solutions.html" class="btn btn-custom-primary me-3">Our Services</a>
+                        <a href="tel:+17819674014" class="btn btn-custom-outline">Call: (781) 967-4014</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+                <img src="public/images/slides/AdobeStock_148696331-scaled.jpeg" alt="Professional Care">
+                <div class="carousel-overlay">
+                    <div class="carousel-content">
+                        <h1>Your Trusted Healthcare Partner in Burlington, MA</h1>
+                        <p>15+ years of excellence serving families with skilled nursing, home care, and professional medical staffing solutions</p>
+                        <a href="why-delite.html" class="btn btn-custom-primary me-3">Why Choose Us</a>
+                        <a href="join-our-team.html" class="btn btn-custom-outline">Join Our Team</a>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Navigation -->
-        <nav>
-            <div class="container">
-                <div class="nav-container">
-                    <div class="logo">
-                        <img src="public/images/logo.jpeg" alt="Delite Health Care Plus LLC Logo">
-                        <span class="logo-text">Delite Health Care Plus</span>
-                    </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
 
-                    <div class="menu-toggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-
-                    <ul class="nav-menu">
-                        <li><a href="index.html" class="active">Home</a></li>
-                        <li><a href="our-story.html">Our Story</a></li>
-                        <li><a href="our-care-solutions.html">Our Care Solutions</a></li>
-                        <li><a href="why-delite.html">Why Delite Health</a></li>
-                        <li><a href="join-our-team.html">Join Our Team</a></li>
-                        <li><a href="get-in-touch.html">Get in Touch</a></li>
-                    </ul>
-                </div>
+    <!-- Services Section -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Healthcare Solutions</h2>
+                <p>Comprehensive care services designed to meet your unique needs with excellence and compassion</p>
             </div>
-        </nav>
-    </header>
 
-    <!-- Main Content -->
-    <main id="main-content">
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h1>Compassionate Healthcare for Every Life Stage</h1>
-                    <p>Delivering excellence in patient-centered care through skilled professionals, innovative solutions, and unwavering dedication to your health and wellbeing in Burlington and surrounding communities.</p>
-                    <a href="our-care-solutions.html" class="btn btn-primary">Explore Our Services</a>
-                    <a href="get-in-touch.html" class="btn btn-outline">Contact Us Today</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Welcome Section -->
-        <section class="section">
-            <div class="container">
-                <h2 style="text-align: center; margin-bottom: 20px;">Welcome to Delite Health Care Plus</h2>
-                <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; font-size: 1.1rem; color: var(--dark-gray);">
-                    Your trusted partner in comprehensive healthcare solutions. We blend clinical excellence with genuine compassion to create personalized care experiences that honor the dignity and unique needs of each individual we serve.
-                </p>
-
-                <div class="card-grid">
-                    <div class="card">
-                        <div class="card-icon">❤️</div>
-                        <h3>Patient-First Philosophy</h3>
-                        <p>Every decision we make centers on what's best for you. Our care plans are tailored to your specific health goals, preferences, and lifestyle.</p>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="icon">❤️</div>
+                        <h3>Patient-First Care</h3>
+                        <p>Every decision centers on your wellbeing. Personalized care plans tailored to your specific health goals and lifestyle.</p>
                     </div>
+                </div>
 
-                    <div class="card">
-                        <div class="card-icon">🏥</div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="icon">🏥</div>
                         <h3>Clinical Excellence</h3>
-                        <p>Our team of licensed healthcare professionals brings decades of combined experience and stays current with the latest medical best practices.</p>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-icon">🏠</div>
-                        <h3>Comfort of Home</h3>
-                        <p>Receive high-quality medical care in the familiar, comfortable environment of your own home, surrounded by loved ones.</p>
+                        <p>Licensed healthcare professionals with decades of experience and commitment to medical best practices.</p>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Services Overview -->
-        <section class="section section-alt">
-            <div class="container">
-                <h2 style="text-align: center; margin-bottom: 40px;">Our Care Solutions</h2>
-
-                <div class="service-list">
-                    <div class="service-item">
-                        <h4>Skilled Nursing Care</h4>
-                        <p>Licensed nurses providing medical care, medication management, wound care, and chronic disease monitoring in your home.</p>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="icon">🏠</div>
+                        <h3>Home-Based Care</h3>
+                        <p>High-quality medical services in the comfort of your home, surrounded by loved ones.</p>
                     </div>
+                </div>
 
-                    <div class="service-item">
-                        <h4>Personal Care Assistance</h4>
-                        <p>Compassionate support with daily living activities including bathing, grooming, mobility, and meal preparation.</p>
-                    </div>
-
-                    <div class="service-item">
-                        <h4>Rehabilitation Services</h4>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="icon">💪</div>
+                        <h3>Rehabilitation</h3>
                         <p>Physical, occupational, and speech therapy to help you regain independence and improve quality of life.</p>
                     </div>
+                </div>
 
-                    <div class="service-item">
-                        <h4>Companion Care</h4>
-                        <p>Friendly, engaging companionship to combat isolation and provide emotional support for better mental health.</p>
-                    </div>
-
-                    <div class="service-item">
-                        <h4>Medical Staffing</h4>
-                        <p>Professional healthcare staffing solutions for facilities seeking qualified, reliable, and compassionate medical professionals.</p>
-                    </div>
-
-                    <div class="service-item">
-                        <h4>Chronic Care Management</h4>
-                        <p>Specialized programs for managing diabetes, heart disease, COPD, and other chronic conditions with coordinated care.</p>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="icon">🤝</div>
+                        <h3>Companion Care</h3>
+                        <p>Friendly, engaging companionship to combat isolation and provide emotional support.</p>
                     </div>
                 </div>
 
-                <div style="text-align: center; margin-top: 40px;">
-                    <a href="our-care-solutions.html" class="btn btn-primary">View All Services</a>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="icon">🩺</div>
+                        <h3>Medical Staffing</h3>
+                        <p>Professional healthcare staffing solutions for facilities seeking qualified medical professionals.</p>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Stats Section -->
-        <section class="section">
-            <div class="container">
-                <h2 style="text-align: center; margin-bottom: 40px;">Our Impact in Numbers</h2>
-
-                <div class="stats-grid">
-                    <div class="stat-item">
+    <!-- Stats Section -->
+    <section class="section stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-lg-3">
+                    <div class="stat-box">
                         <span class="stat-number">15+</span>
-                        <span class="stat-label">Years of Experience</span>
+                        <span class="stat-label">Years Experience</span>
                     </div>
-
-                    <div class="stat-item">
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="stat-box">
                         <span class="stat-number">500+</span>
                         <span class="stat-label">Families Served</span>
                     </div>
-
-                    <div class="stat-item">
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="stat-box">
                         <span class="stat-number">98%</span>
-                        <span class="stat-label">Client Satisfaction</span>
+                        <span class="stat-label">Satisfaction Rate</span>
                     </div>
-
-                    <div class="stat-item">
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="stat-box">
                         <span class="stat-number">50+</span>
-                        <span class="stat-label">Healthcare Professionals</span>
+                        <span class="stat-label">Care Professionals</span>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Why Choose Us -->
-        <section class="section section-alt">
-            <div class="container">
-                <h2 style="text-align: center; margin-bottom: 40px;">Why Families Trust Us</h2>
-
-                <div style="max-width: 800px; margin: 0 auto;">
-                    <ul class="features-list">
-                        <li>Licensed, insured, and certified healthcare professionals</li>
-                        <li>Customized care plans designed around your unique needs</li>
-                        <li>24/7 availability for emergencies and urgent concerns</li>
-                        <li>Transparent communication with families and physicians</li>
-                        <li>Affordable rates and flexible payment options</li>
-                        <li>Commitment to dignity, respect, and independence</li>
-                        <li>Serving Burlington, MA and surrounding communities</li>
-                    </ul>
-                </div>
-
-                <div style="text-align: center; margin-top: 40px;">
-                    <a href="why-delite.html" class="btn btn-primary">Learn More About Us</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Call to Action -->
-        <section class="section">
-            <div class="container" style="text-align: center;">
-                <h2>Ready to Experience Better Healthcare?</h2>
-                <p style="max-width: 700px; margin: 20px auto 30px; font-size: 1.1rem;">
-                    Contact us today to schedule a free consultation and learn how we can support your health and wellness journey with compassionate, professional care.
-                </p>
-                <a href="get-in-touch.html" class="btn btn-primary" style="margin-right: 15px;">Schedule Consultation</a>
-                <a href="tel:+17819674014" class="btn btn-secondary">Call Now: (781) 967-4014</a>
-            </div>
-        </section>
-    </main>
+    <!-- CTA Section -->
+    <section class="section">
+        <div class="container text-center">
+            <h2 class="mb-4">Ready to Experience Better Healthcare?</h2>
+            <p class="lead mb-4">Contact us today for a free consultation and discover how we can support your health journey</p>
+            <a href="get-in-touch.html" class="btn btn-custom-primary btn-lg me-3">Schedule Consultation</a>
+            <a href="tel:+17819674014" class="btn btn-outline-primary btn-lg">Call: (781) 967-4014</a>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Delite Health Care Plus LLC</h3>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5>Delite Health Care Plus LLC</h5>
                     <p>Providing compassionate, professional healthcare services to Burlington, MA and surrounding communities.</p>
-                    <p style="margin-top: 20px;">
+                    <p class="mt-3">
                         <strong>1500 District Avenue<br>
                         Burlington, MA 01803</strong>
                     </p>
                 </div>
 
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="our-story.html">Our Story</a></li>
-                        <li><a href="our-care-solutions.html">Our Care Solutions</a></li>
-                        <li><a href="why-delite.html">Why Delite Health</a></li>
-                        <li><a href="join-our-team.html">Join Our Team</a></li>
-                        <li><a href="get-in-touch.html">Get in Touch</a></li>
+                        <li><a href="our-care-solutions.html">Services</a></li>
+                        <li><a href="why-delite.html">Why Choose Us</a></li>
+                        <li><a href="join-our-team.html">Careers</a></li>
+                        <li><a href="get-in-touch.html">Contact</a></li>
                     </ul>
                 </div>
 
-                <div class="footer-section">
-                    <h3>Contact Information</h3>
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
                     <ul>
-                        <li><a href="tel:+17819674014">📞 +1 (781) 967-4014</a></li>
-                        <li><a href="mailto:Nasifk@delitehealthcare.com">📧 Nasifk@delitehealthcare.com</a></li>
-                        <li><a href="https://www.DeliteHealthCare.com" target="_blank">🌐 www.DeliteHealthCare.com</a></li>
+                        <li><a href="tel:+17819674014"><i class="bi bi-telephone-fill"></i> +1 (781) 967-4014</a></li>
+                        <li><a href="mailto:Nasifk@delitehealthcare.com"><i class="bi bi-envelope-fill"></i> Nasifk@delitehealthcare.com</a></li>
+                        <li><a href="https://www.DeliteHealthCare.com"><i class="bi bi-globe"></i> www.DeliteHealthCare.com</a></li>
                     </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h3>Business Hours</h3>
-                    <p>Monday - Friday: 8:00 AM - 6:00 PM<br>
-                    Saturday: By Appointment<br>
-                    Sunday: Closed</p>
-                    <p style="margin-top: 15px;"><strong>24/7 Emergency Support Available</strong></p>
+                    <p class="mt-3"><strong>24/7 Emergency Support Available</strong></p>
                 </div>
             </div>
 
@@ -353,7 +670,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="js/main.js"></script>
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
