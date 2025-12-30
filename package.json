@@ -1,0 +1,8 @@
+{
+  "name": "delite-healthcare-web",
+  "version": "1.0.0",
+  "description": "Delite Health Care Plus LLC Website",
+  "scripts": {
+    "build": "echo 'No build needed - static HTML site'"
+  }
+}
