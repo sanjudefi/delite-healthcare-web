@@ -1,52 +1,26 @@
 {
-  "version": 2,
-  "name": "delite-healthcare-web",
-  "builds": [
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
     {
-      "src": "*.html",
-      "use": "@vercel/static"
+      "source": "/our-story",
+      "destination": "/our-story.html"
     },
     {
-      "src": "css/*.css",
-      "use": "@vercel/static"
+      "source": "/our-care-solutions",
+      "destination": "/our-care-solutions.html"
     },
     {
-      "src": "js/*.js",
-      "use": "@vercel/static"
+      "source": "/why-delite",
+      "destination": "/why-delite.html"
     },
     {
-      "src": "public/**",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/",
-      "dest": "/index.html"
+      "source": "/join-our-team",
+      "destination": "/join-our-team.html"
     },
     {
-      "src": "/our-story",
-      "dest": "/our-story.html"
-    },
-    {
-      "src": "/our-care-solutions",
-      "dest": "/our-care-solutions.html"
-    },
-    {
-      "src": "/why-delite",
-      "dest": "/why-delite.html"
-    },
-    {
-      "src": "/join-our-team",
-      "dest": "/join-our-team.html"
-    },
-    {
-      "src": "/get-in-touch",
-      "dest": "/get-in-touch.html"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
+      "source": "/get-in-touch",
+      "destination": "/get-in-touch.html"
     }
   ],
   "headers": [
