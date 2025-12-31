@@ -35,13 +35,13 @@
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css">
-    
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <style>
         :root {
             --primary-blue: #2563eb;
@@ -50,12 +50,12 @@
             --accent-red: #dc2626;
             --text-dark: #1f2937;
         }
-        
+
         body {
             font-family: 'Poppins', sans-serif;
             color: var(--text-dark);
         }
-        
+
         /* Top Bar */
         .top-bar {
             background: var(--primary-blue);
@@ -63,22 +63,22 @@
             padding: 10px 0;
             font-size: 14px;
         }
-        
+
         .top-bar a {
             color: white;
             text-decoration: none;
             margin: 0 15px;
         }
-        
+
         .top-bar a:hover { opacity: 0.8; }
-        
+
         /* Navigation */
         .navbar {
             background: white !important;
             box-shadow: 0 2px 15px rgba(0,0,0,0.1);
             padding: 15px 0;
         }
-        
+
         .navbar-brand {
             display: flex;
             align-items: center;
@@ -87,32 +87,32 @@
             font-size: 1.5rem;
             color: var(--primary-blue) !important;
         }
-        
+
         .navbar-brand img {
             height: 55px;
             width: 55px;
             object-fit: contain;
         }
-        
+
         .navbar-brand .brand-text {
             display: flex;
             flex-direction: column;
             line-height: 1.2;
         }
-        
+
         .brand-text .brand-name {
             font-size: 1.3rem;
             font-weight: 700;
             color: var(--primary-blue);
         }
-        
+
         .brand-text .brand-tagline {
             font-size: 0.7rem;
             font-weight: 400;
             color: var(--accent-red);
             letter-spacing: 1px;
         }
-        
+
         .navbar-nav .nav-link {
             font-weight: 500;
             color: var(--text-dark) !important;
@@ -121,18 +121,18 @@
             border-radius: 6px;
             transition: all 0.3s ease;
         }
-        
+
         .navbar-nav .nav-link:hover,
         .navbar-nav .nav-link.active {
             background: var(--light-blue);
             color: var(--primary-blue) !important;
         }
-        
+
         /* Dropdown on Hover */
         .navbar-nav .dropdown:hover .dropdown-menu {
             display: block;
         }
-        
+
         .dropdown-menu {
             border: none;
             box-shadow: 0 5px 20px rgba(0,0,0,0.15);
@@ -140,22 +140,208 @@
             padding: 10px 0;
             margin-top: 0;
         }
-        
+
         .dropdown-item {
             padding: 10px 25px;
             transition: all 0.3s ease;
         }
-        
+
         .dropdown-item:hover {
             background: var(--light-blue);
             color: var(--primary-blue);
             padding-left: 30px;
         }
-        
-        /* Keep existing page styles */
-        h1, h2, h3 { color: var(--dark-blue); }
-        .section { padding: 60px 0; }
-        .container { max-width: 1200px; }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        /* Section */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: #6b7280;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Service Cards */
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+            border: 1px solid #f3f4f6;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .service-card .icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--dark-blue);
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: #6b7280;
+            line-height: 1.8;
+        }
+
+        /* Value Cards */
+        .value-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            border: 1px solid #f3f4f6;
+            border-left: 4px solid var(--primary-blue);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .value-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+            border-left-color: var(--accent-red);
+        }
+
+        .value-card h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--dark-blue);
+            margin-bottom: 12px;
+        }
+
+        .value-card p {
+            color: #6b7280;
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background: var(--primary-blue);
+            border: none;
+            padding: 12px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--accent-red);
+            border: none;
+            padding: 12px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: #b91c1c;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-blue);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        footer h5 {
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #dbeafe;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        footer a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 40px;
+            padding-top: 20px;
+            text-align: center;
+            color: #dbeafe;
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
     </style>
 
     <!-- JSON-LD Schema Markup -->
@@ -186,7 +372,7 @@
 </head>
 <body>
     <!-- Skip to Content Link -->
-    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    <a href="#main-content" class="skip-to-content visually-hidden-focusable">Skip to main content</a>
 
     <!-- Header -->
     <header>
@@ -259,181 +445,213 @@
 
     <!-- Main Content -->
     <main id="main-content">
-        <!-- Hero Section -->
-        <section class="hero">
+        <!-- Page Header -->
+        <section class="page-header">
             <div class="container">
-                <div class="hero-content">
-                    <h1>Our Story</h1>
-                    <p>Dedicated healthcare professionals united by a common purpose: to deliver exceptional care that honors the dignity, independence, and wellbeing of every person we serve.</p>
-                </div>
+                <h1>Our Story</h1>
+                <p>Dedicated healthcare professionals united by a common purpose: to deliver exceptional care that honors the dignity, independence, and wellbeing of every person we serve.</p>
             </div>
         </section>
 
         <!-- Our Story -->
-        <section class="section">
+        <section class="section bg-light">
             <div class="container">
-                <h2 style="text-align: center; margin-bottom: 40px;">Our Story</h2>
-                <div style="max-width: 900px; margin: 0 auto;">
-                    <p style="font-size: 1.1rem; line-height: 1.9;">
-                        Delite Health Care Plus LLC was founded on a simple yet powerful belief: quality healthcare should be accessible, compassionate, and tailored to each individual's unique needs. What began as a small team of dedicated healthcare professionals has grown into a trusted provider serving families throughout Burlington, Massachusetts and surrounding communities.
-                    </p>
-                    <p style="font-size: 1.1rem; line-height: 1.9;">
-                        Over the years, we've remained steadfast in our commitment to clinical excellence while never losing sight of what matters most—the human connection. Every member of our team understands that behind every care plan is a person with hopes, fears, and dreams. This understanding drives everything we do.
-                    </p>
-                    <p style="font-size: 1.1rem; line-height: 1.9;">
-                        Today, we're proud to offer comprehensive healthcare solutions that blend cutting-edge medical practices with the warmth and personalized attention that only comes from truly caring about the people we serve.
-                    </p>
+                <div class="section-title">
+                    <h2>Our Journey</h2>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <p class="lead text-center mb-4">
+                            Delite Health Care Plus LLC was founded on a simple yet powerful belief: quality healthcare should be accessible, compassionate, and tailored to each individual's unique needs.
+                        </p>
+                        <p style="font-size: 1.1rem; line-height: 1.9; color: #6b7280;">
+                            What began as a small team of dedicated healthcare professionals has grown into a trusted provider serving families throughout Burlington, Massachusetts and surrounding communities. Over the years, we've remained steadfast in our commitment to clinical excellence while never losing sight of what matters most—the human connection.
+                        </p>
+                        <p style="font-size: 1.1rem; line-height: 1.9; color: #6b7280;">
+                            Every member of our team understands that behind every care plan is a person with hopes, fears, and dreams. This understanding drives everything we do. Today, we're proud to offer comprehensive healthcare solutions that blend cutting-edge medical practices with the warmth and personalized attention that only comes from truly caring about the people we serve.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Mission & Vision -->
-        <section class="section section-alt">
+        <!-- Mission, Vision, Promise -->
+        <section class="section">
             <div class="container">
-                <div class="card-grid">
-                    <div class="card">
-                        <div class="card-icon">🎯</div>
-                        <h3>Our Mission</h3>
-                        <p>To enhance the quality of life for individuals and families through compassionate, professional healthcare services that promote independence, dignity, and optimal health outcomes in the comfort of familiar surroundings.</p>
+                <div class="section-title">
+                    <h2>Our Foundation</h2>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <div class="icon"><i class="bi bi-bullseye text-primary"></i></div>
+                            <h3>Our Mission</h3>
+                            <p>To enhance the quality of life for individuals and families through compassionate, professional healthcare services that promote independence, dignity, and optimal health outcomes in the comfort of familiar surroundings.</p>
+                        </div>
                     </div>
 
-                    <div class="card">
-                        <div class="card-icon">👁️</div>
-                        <h3>Our Vision</h3>
-                        <p>To be the most trusted and respected healthcare partner in our community, known for clinical excellence, innovative care solutions, and unwavering commitment to patient satisfaction and wellbeing.</p>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <div class="icon"><i class="bi bi-eye text-info"></i></div>
+                            <h3>Our Vision</h3>
+                            <p>To be the most trusted and respected healthcare partner in our community, known for clinical excellence, innovative care solutions, and unwavering commitment to patient satisfaction and wellbeing.</p>
+                        </div>
                     </div>
 
-                    <div class="card">
-                        <div class="card-icon">🌟</div>
-                        <h3>Our Promise</h3>
-                        <p>We promise to treat every patient with the same level of care, respect, and attention we would want for our own family members, ensuring safety, comfort, and peace of mind.</p>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <div class="icon"><i class="bi bi-star text-warning"></i></div>
+                            <h3>Our Promise</h3>
+                            <p>We promise to treat every patient with the same level of care, respect, and attention we would want for our own family members, ensuring safety, comfort, and peace of mind.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Core Values -->
-        <section class="section">
+        <section class="section bg-light">
             <div class="container">
-                <h2 style="text-align: center; margin-bottom: 40px;">Our Core Values</h2>
+                <div class="section-title">
+                    <h2>Our Core Values</h2>
+                    <p>The principles that guide everything we do</p>
+                </div>
 
-                <div class="service-list">
-                    <div class="service-item">
-                        <h4>Compassion</h4>
-                        <p>We approach every interaction with empathy, kindness, and genuine concern for the wellbeing of those we serve.</p>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="value-card">
+                            <h4><i class="bi bi-heart-fill text-danger me-2"></i>Compassion</h4>
+                            <p>We approach every interaction with empathy, kindness, and genuine concern for the wellbeing of those we serve.</p>
+                        </div>
                     </div>
 
-                    <div class="service-item">
-                        <h4>Excellence</h4>
-                        <p>We maintain the highest standards of clinical care, continuously improving our skills and knowledge to deliver superior outcomes.</p>
+                    <div class="col-md-6">
+                        <div class="value-card">
+                            <h4><i class="bi bi-trophy-fill text-warning me-2"></i>Excellence</h4>
+                            <p>We maintain the highest standards of clinical care, continuously improving our skills and knowledge to deliver superior outcomes.</p>
+                        </div>
                     </div>
 
-                    <div class="service-item">
-                        <h4>Integrity</h4>
-                        <p>We conduct ourselves with honesty, transparency, and ethical behavior in all our professional relationships.</p>
+                    <div class="col-md-6">
+                        <div class="value-card">
+                            <h4><i class="bi bi-shield-check text-success me-2"></i>Integrity</h4>
+                            <p>We conduct ourselves with honesty, transparency, and ethical behavior in all our professional relationships.</p>
+                        </div>
                     </div>
 
-                    <div class="service-item">
-                        <h4>Respect</h4>
-                        <p>We honor the dignity, autonomy, and individuality of each person, valuing diverse backgrounds and perspectives.</p>
+                    <div class="col-md-6">
+                        <div class="value-card">
+                            <h4><i class="bi bi-hand-thumbs-up-fill text-primary me-2"></i>Respect</h4>
+                            <p>We honor the dignity, autonomy, and individuality of each person, valuing diverse backgrounds and perspectives.</p>
+                        </div>
                     </div>
 
-                    <div class="service-item">
-                        <h4>Collaboration</h4>
-                        <p>We work closely with patients, families, and healthcare providers to create coordinated, comprehensive care plans.</p>
+                    <div class="col-md-6">
+                        <div class="value-card">
+                            <h4><i class="bi bi-people-fill text-info me-2"></i>Collaboration</h4>
+                            <p>We work closely with patients, families, and healthcare providers to create coordinated, comprehensive care plans.</p>
+                        </div>
                     </div>
 
-                    <div class="service-item">
-                        <h4>Innovation</h4>
-                        <p>We embrace new technologies and methodologies that improve care quality, efficiency, and patient experience.</p>
+                    <div class="col-md-6">
+                        <div class="value-card">
+                            <h4><i class="bi bi-lightbulb-fill text-warning me-2"></i>Innovation</h4>
+                            <p>We embrace new technologies and methodologies that improve care quality, efficiency, and patient experience.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Our Team -->
-        <section class="section section-alt">
-            <div class="container">
-                <h2 style="text-align: center; margin-bottom: 30px;">Our Professional Team</h2>
-                <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; font-size: 1.1rem;">
-                    Our team consists of licensed, certified healthcare professionals who bring expertise, experience, and genuine compassion to their work every day.
-                </p>
-
-                <div class="card-grid">
-                    <div class="card">
-                        <h3>Registered Nurses</h3>
-                        <p>Licensed RNs with specialized training in home health, chronic disease management, wound care, and medication administration.</p>
-                    </div>
-
-                    <div class="card">
-                        <h3>Licensed Practical Nurses</h3>
-                        <p>Skilled LPNs providing essential nursing care including vital sign monitoring, basic wound care, and patient education.</p>
-                    </div>
-
-                    <div class="card">
-                        <h3>Personal Care Assistants</h3>
-                        <p>Compassionate caregivers trained in activities of daily living assistance, mobility support, and companionship.</p>
-                    </div>
-
-                    <div class="card">
-                        <h3>Therapy Specialists</h3>
-                        <p>Licensed physical, occupational, and speech therapists helping patients regain function and independence.</p>
-                    </div>
-
-                    <div class="card">
-                        <h3>Care Coordinators</h3>
-                        <p>Dedicated professionals who manage care plans, coordinate services, and serve as your primary point of contact.</p>
-                    </div>
-
-                    <div class="card">
-                        <h3>Administrative Support</h3>
-                        <p>Friendly, knowledgeable staff who handle scheduling, billing, and ensure smooth communication.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- What Sets Us Apart -->
         <section class="section">
             <div class="container">
-                <h2 style="text-align: center; margin-bottom: 40px;">What Sets Us Apart</h2>
+                <div class="section-title">
+                    <h2>Our Professional Team</h2>
+                    <p>Licensed, certified healthcare professionals bringing expertise and compassion to their work every day</p>
+                </div>
 
-                <div style="max-width: 900px; margin: 0 auto;">
-                    <ul class="features-list">
-                        <li>Rigorous hiring process ensuring only the most qualified, compassionate professionals join our team</li>
-                        <li>Ongoing training and education to stay current with best practices and innovations</li>
-                        <li>Low caregiver-to-patient ratios allowing for more personalized attention</li>
-                        <li>Comprehensive background checks and credential verification for your peace of mind</li>
-                        <li>Cultural sensitivity training to serve diverse populations respectfully</li>
-                        <li>Open communication channels with families, patients, and healthcare providers</li>
-                        <li>Quality assurance programs with regular assessments and patient feedback reviews</li>
-                        <li>Emergency response protocols and 24/7 availability for urgent concerns</li>
-                    </ul>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <div class="icon"><i class="bi bi-hospital text-danger"></i></div>
+                            <h3>Registered Nurses</h3>
+                            <p>Licensed RNs with specialized training in home health, chronic disease management, wound care, and medication administration.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <div class="icon"><i class="bi bi-heart-pulse text-danger"></i></div>
+                            <h3>Licensed Practical Nurses</h3>
+                            <p>Skilled LPNs providing essential nursing care including vital sign monitoring, basic wound care, and patient education.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <div class="icon"><i class="bi bi-person-heart text-primary"></i></div>
+                            <h3>Personal Care Assistants</h3>
+                            <p>Compassionate caregivers trained in activities of daily living assistance, mobility support, and companionship.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <div class="icon"><i class="bi bi-activity text-success"></i></div>
+                            <h3>Therapy Specialists</h3>
+                            <p>Licensed physical, occupational, and speech therapists helping patients regain function and independence.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <div class="icon"><i class="bi bi-clipboard2-pulse text-info"></i></div>
+                            <h3>Care Coordinators</h3>
+                            <p>Dedicated professionals who manage care plans, coordinate services, and serve as your primary point of contact.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <div class="icon"><i class="bi bi-headset text-primary"></i></div>
+                            <h3>Administrative Support</h3>
+                            <p>Friendly, knowledgeable staff who handle scheduling, billing, and ensure smooth communication.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Certifications & Accreditations -->
-        <section class="section section-alt">
+        <!-- Certifications -->
+        <section class="section bg-light">
             <div class="container">
-                <h2 style="text-align: center; margin-bottom: 40px;">Certifications & Credentials</h2>
-                <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-                    <p style="font-size: 1.1rem; margin-bottom: 30px;">
-                        We maintain all required licenses, certifications, and insurance to provide safe, legal, and professional healthcare services in Massachusetts.
-                    </p>
+                <div class="section-title">
+                    <h2>Certifications & Credentials</h2>
+                    <p>Maintaining all required licenses, certifications, and insurance for safe, professional healthcare services</p>
+                </div>
 
-                    <div class="card-grid">
-                        <div class="card">
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <div class="icon"><i class="bi bi-patch-check text-success"></i></div>
                             <h4>Licensed Healthcare Professionals</h4>
                             <p>All clinical staff hold valid Massachusetts professional licenses</p>
                         </div>
+                    </div>
 
-                        <div class="card">
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <div class="icon"><i class="bi bi-shield-fill-check text-primary"></i></div>
                             <h4>Insured & Bonded</h4>
                             <p>Comprehensive liability coverage protecting our clients and staff</p>
                         </div>
+                    </div>
 
-                        <div class="card">
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <div class="icon"><i class="bi bi-lock-fill text-info"></i></div>
                             <h4>HIPAA Compliant</h4>
                             <p>Strict adherence to patient privacy and data security regulations</p>
                         </div>
@@ -443,14 +661,18 @@
         </section>
 
         <!-- Call to Action -->
-        <section class="section">
-            <div class="container" style="text-align: center;">
-                <h2>Experience the Delite Difference</h2>
-                <p style="max-width: 700px; margin: 20px auto 30px; font-size: 1.1rem;">
+        <section class="section" style="background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue)); color: white;">
+            <div class="container text-center">
+                <h2 class="text-white mb-4">Experience the Delite Difference</h2>
+                <p style="max-width: 700px; margin: 0 auto 30px; font-size: 1.1rem; opacity: 0.95;">
                     Discover how our experienced team can support your health and wellness goals with personalized, compassionate care.
                 </p>
-                <a href="our-care-solutions.html" class="btn btn-primary" style="margin-right: 15px;">View Our Services</a>
-                <a href="get-in-touch.html" class="btn btn-secondary">Contact Us</a>
+                <a href="our-care-solutions.html" class="btn btn-secondary me-3">
+                    <i class="bi bi-clipboard2-heart me-2"></i>View Our Services
+                </a>
+                <a href="get-in-touch.html" class="btn btn-light">
+                    <i class="bi bi-envelope-fill me-2"></i>Contact Us
+                </a>
             </div>
         </section>
     </main>
@@ -458,18 +680,18 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Delite Health Care Plus LLC</h3>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <h5>Delite Health Care Plus LLC</h5>
                     <p>Providing compassionate, professional healthcare services to Burlington, MA and surrounding communities.</p>
-                    <p style="margin-top: 20px;">
+                    <p class="mt-3">
                         <strong>1500 District Avenue<br>
                         Burlington, MA 01803</strong>
                     </p>
                 </div>
 
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
+                <div class="col-md-6 col-lg-3">
+                    <h5>Quick Links</h5>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="our-story.html">Our Story</a></li>
@@ -480,21 +702,21 @@
                     </ul>
                 </div>
 
-                <div class="footer-section">
-                    <h3>Contact Information</h3>
+                <div class="col-md-6 col-lg-3">
+                    <h5>Contact Information</h5>
                     <ul>
-                        <li><a href="tel:+17819674014">📞 +1 (781) 967-4014</a></li>
-                        <li><a href="mailto:Nasifk@delitehealthcare.com">📧 Nasifk@delitehealthcare.com</a></li>
-                        <li><a href="https://www.DeliteHealthCare.com" target="_blank">🌐 www.DeliteHealthCare.com</a></li>
+                        <li><a href="tel:+17819674014"><i class="bi bi-telephone-fill me-2"></i>+1 (781) 967-4014</a></li>
+                        <li><a href="mailto:Nasifk@delitehealthcare.com"><i class="bi bi-envelope-fill me-2"></i>Nasifk@delitehealthcare.com</a></li>
+                        <li><a href="https://www.DeliteHealthCare.com" target="_blank"><i class="bi bi-globe me-2"></i>www.DeliteHealthCare.com</a></li>
                     </ul>
                 </div>
 
-                <div class="footer-section">
-                    <h3>Business Hours</h3>
+                <div class="col-md-6 col-lg-3">
+                    <h5>Business Hours</h5>
                     <p>Monday - Friday: 8:00 AM - 6:00 PM<br>
                     Saturday: By Appointment<br>
                     Sunday: Closed</p>
-                    <p style="margin-top: 15px;"><strong>24/7 Emergency Support Available</strong></p>
+                    <p class="mt-3"><strong>24/7 Emergency Support Available</strong></p>
                 </div>
             </div>
 
