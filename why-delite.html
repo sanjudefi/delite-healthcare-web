@@ -35,13 +35,13 @@
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css">
-    
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <style>
         :root {
             --primary-blue: #2563eb;
@@ -50,12 +50,12 @@
             --accent-red: #dc2626;
             --text-dark: #1f2937;
         }
-        
+
         body {
             font-family: 'Poppins', sans-serif;
             color: var(--text-dark);
         }
-        
+
         /* Top Bar */
         .top-bar {
             background: var(--primary-blue);
@@ -63,22 +63,22 @@
             padding: 10px 0;
             font-size: 14px;
         }
-        
+
         .top-bar a {
             color: white;
             text-decoration: none;
             margin: 0 15px;
         }
-        
+
         .top-bar a:hover { opacity: 0.8; }
-        
+
         /* Navigation */
         .navbar {
             background: white !important;
             box-shadow: 0 2px 15px rgba(0,0,0,0.1);
             padding: 15px 0;
         }
-        
+
         .navbar-brand {
             display: flex;
             align-items: center;
@@ -87,32 +87,32 @@
             font-size: 1.5rem;
             color: var(--primary-blue) !important;
         }
-        
+
         .navbar-brand img {
             height: 55px;
             width: 55px;
             object-fit: contain;
         }
-        
+
         .navbar-brand .brand-text {
             display: flex;
             flex-direction: column;
             line-height: 1.2;
         }
-        
+
         .brand-text .brand-name {
             font-size: 1.3rem;
             font-weight: 700;
             color: var(--primary-blue);
         }
-        
+
         .brand-text .brand-tagline {
             font-size: 0.7rem;
             font-weight: 400;
             color: var(--accent-red);
             letter-spacing: 1px;
         }
-        
+
         .navbar-nav .nav-link {
             font-weight: 500;
             color: var(--text-dark) !important;
@@ -121,18 +121,18 @@
             border-radius: 6px;
             transition: all 0.3s ease;
         }
-        
+
         .navbar-nav .nav-link:hover,
         .navbar-nav .nav-link.active {
             background: var(--light-blue);
             color: var(--primary-blue) !important;
         }
-        
+
         /* Dropdown on Hover */
         .navbar-nav .dropdown:hover .dropdown-menu {
             display: block;
         }
-        
+
         .dropdown-menu {
             border: none;
             box-shadow: 0 5px 20px rgba(0,0,0,0.15);
@@ -140,22 +140,279 @@
             padding: 10px 0;
             margin-top: 0;
         }
-        
+
         .dropdown-item {
             padding: 10px 25px;
             transition: all 0.3s ease;
         }
-        
+
         .dropdown-item:hover {
             background: var(--light-blue);
             color: var(--primary-blue);
             padding-left: 30px;
         }
-        
-        /* Keep existing page styles */
-        h1, h2, h3 { color: var(--dark-blue); }
-        .section { padding: 60px 0; }
-        .container { max-width: 1200px; }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        /* Section */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: #6b7280;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Feature Cards */
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+            border: 1px solid #f3f4f6;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .feature-card .icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--dark-blue);
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: #6b7280;
+            line-height: 1.8;
+        }
+
+        /* Value Cards */
+        .value-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            border: 1px solid #f3f4f6;
+            border-left: 4px solid var(--primary-blue);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .value-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+            border-left-color: var(--accent-red);
+        }
+
+        .value-card h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--dark-blue);
+            margin-bottom: 12px;
+        }
+
+        .value-card p {
+            color: #6b7280;
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        /* Stats */
+        .stat-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            border: 1px solid #f3f4f6;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        /* Testimonial Cards */
+        .testimonial-card {
+            background: white;
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            border: 1px solid #f3f4f6;
+            height: 100%;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 25px;
+            font-size: 4rem;
+            color: var(--light-blue);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            color: #6b7280;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            padding-top: 30px;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary-blue);
+            font-style: normal;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background: var(--primary-blue);
+            border: none;
+            padding: 12px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--accent-red);
+            border: none;
+            padding: 12px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: #b91c1c;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-blue);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        footer h5 {
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #dbeafe;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        footer a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 40px;
+            padding-top: 20px;
+            text-align: center;
+            color: #dbeafe;
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
     </style>
 
     <!-- JSON-LD Schema Markup -->
@@ -188,7 +445,7 @@
 </head>
 <body>
     <!-- Skip to Content Link -->
-    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    <a href="#main-content" class="skip-to-content visually-hidden-focusable">Skip to main content</a>
 
     <!-- Header -->
     <header>
@@ -261,151 +518,168 @@
 
     <!-- Main Content -->
     <main id="main-content">
-        <!-- Hero Section -->
-        <section class="hero">
+        <!-- Page Header -->
+        <section class="page-header">
             <div class="container">
-                <div class="hero-content">
-                    <h1>Why Families Choose Delite Health Care Plus</h1>
-                    <p>When healthcare decisions matter most, Burlington families trust us to deliver exceptional care with compassion, expertise, and unwavering commitment to their wellbeing.</p>
-                </div>
+                <h1>Why Families Choose Delite Health Care Plus</h1>
+                <p>When healthcare decisions matter most, Burlington families trust us to deliver exceptional care with compassion, expertise, and unwavering commitment to their wellbeing.</p>
             </div>
         </section>
 
         <!-- Key Differentiators -->
-        <section class="section">
+        <section class="section bg-light">
             <div class="container">
-                <h2 style="text-align: center; margin-bottom: 40px;">What Makes Us Different</h2>
+                <div class="section-title">
+                    <h2>What Makes Us Different</h2>
+                    <p>The Delite Health Care Plus advantage</p>
+                </div>
 
-                <div class="card-grid">
-                    <div class="card">
-                        <div class="card-icon">✓</div>
-                        <h3>Fully Licensed & Certified</h3>
-                        <p>All our healthcare professionals hold current Massachusetts licenses, certifications, and undergo rigorous background checks for your safety and peace of mind.</p>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card">
+                            <div class="icon"><i class="bi bi-shield-fill-check text-success"></i></div>
+                            <h3>Fully Licensed & Certified</h3>
+                            <p>All healthcare professionals hold current Massachusetts licenses and certifications, with rigorous background checks for your safety.</p>
+                        </div>
                     </div>
 
-                    <div class="card">
-                        <div class="card-icon">🎯</div>
-                        <h3>Personalized Care Plans</h3>
-                        <p>No two patients are alike. We create customized care strategies tailored to your unique health needs, preferences, lifestyle, and goals.</p>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card">
+                            <div class="icon"><i class="bi bi-clipboard2-heart text-primary"></i></div>
+                            <h3>Personalized Care Plans</h3>
+                            <p>Customized care strategies tailored to your unique health needs, preferences, lifestyle, and goals.</p>
+                        </div>
                     </div>
 
-                    <div class="card">
-                        <div class="card-icon">⏰</div>
-                        <h3>24/7 Availability</h3>
-                        <p>Healthcare emergencies don't follow business hours. Our team is available around the clock for urgent concerns and support when you need it most.</p>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card">
+                            <div class="icon"><i class="bi bi-clock-fill text-danger"></i></div>
+                            <h3>24/7 Availability</h3>
+                            <p>Healthcare emergencies don't follow business hours. Our team is available around the clock for urgent concerns.</p>
+                        </div>
                     </div>
 
-                    <div class="card">
-                        <div class="card-icon">💰</div>
-                        <h3>Transparent Pricing</h3>
-                        <p>Clear, upfront pricing with no hidden fees. We work with insurance providers and offer flexible payment options to make quality care accessible.</p>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card">
+                            <div class="icon"><i class="bi bi-currency-dollar text-success"></i></div>
+                            <h3>Transparent Pricing</h3>
+                            <p>Clear, upfront pricing with no hidden fees. We work with insurance providers and offer flexible payment options.</p>
+                        </div>
                     </div>
 
-                    <div class="card">
-                        <div class="card-icon">🏆</div>
-                        <h3>Proven Track Record</h3>
-                        <p>Over 15 years of excellence serving Burlington families, with a 98% satisfaction rate and hundreds of positive testimonials.</p>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card">
+                            <div class="icon"><i class="bi bi-trophy-fill text-warning"></i></div>
+                            <h3>Proven Track Record</h3>
+                            <p>Over 15 years of excellence serving Burlington families, with a 98% satisfaction rate and hundreds of positive testimonials.</p>
+                        </div>
                     </div>
 
-                    <div class="card">
-                        <div class="card-icon">🤝</div>
-                        <h3>Family Communication</h3>
-                        <p>Regular updates, open communication channels, and family involvement in care decisions ensure everyone stays informed and engaged.</p>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card">
+                            <div class="icon"><i class="bi bi-chat-heart-fill text-danger"></i></div>
+                            <h3>Family Communication</h3>
+                            <p>Regular updates, open communication channels, and family involvement in care decisions keep everyone informed.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Our Advantages -->
-        <section class="section section-alt">
-            <div class="container">
-                <h2 style="text-align: center; margin-bottom: 40px;">The Delite Advantage</h2>
-
-                <div class="service-list">
-                    <div class="service-item">
-                        <h4>Experienced Healthcare Professionals</h4>
-                        <p>Our team averages 10+ years of clinical experience. We invest in ongoing training to ensure our staff stays current with best practices, new treatments, and innovative care approaches.</p>
-                    </div>
-
-                    <div class="service-item">
-                        <h4>Comprehensive Care Coordination</h4>
-                        <p>We work seamlessly with your physicians, specialists, therapists, and hospitals to ensure coordinated, comprehensive care that addresses all aspects of your health.</p>
-                    </div>
-
-                    <div class="service-item">
-                        <h4>Cultural Sensitivity & Diversity</h4>
-                        <p>Our diverse team respects and honors different cultural backgrounds, languages, dietary preferences, and religious practices, creating inclusive care environments.</p>
-                    </div>
-
-                    <div class="service-item">
-                        <h4>Low Caregiver-to-Patient Ratios</h4>
-                        <p>We maintain manageable caseloads so caregivers can dedicate proper time and attention to each individual, never rushing through visits or cutting corners.</p>
-                    </div>
-
-                    <div class="service-item">
-                        <h4>Advanced Technology Integration</h4>
-                        <p>Electronic health records, secure communication platforms, and remote monitoring technologies enhance care quality, safety, and coordination.</p>
-                    </div>
-
-                    <div class="service-item">
-                        <h4>Quality Assurance Programs</h4>
-                        <p>Regular supervisory visits, patient satisfaction surveys, and continuous quality improvement initiatives ensure consistently excellent service delivery.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Commitment to Excellence -->
+        <!-- The Delite Advantage -->
         <section class="section">
             <div class="container">
-                <h2 style="text-align: center; margin-bottom: 40px;">Our Commitment to You</h2>
+                <div class="section-title">
+                    <h2>The Delite Advantage</h2>
+                    <p>Going beyond standard care to deliver exceptional results</p>
+                </div>
 
-                <div style="max-width: 900px; margin: 0 auto;">
-                    <ul class="features-list">
-                        <li>Respect for your dignity, privacy, and independence at all times</li>
-                        <li>Honest, transparent communication about care plans, costs, and expectations</li>
-                        <li>Rapid response to concerns, questions, or changes in your condition</li>
-                        <li>Continuity of care with consistent caregivers whenever possible</li>
-                        <li>Adherence to strict infection control and safety protocols</li>
-                        <li>Compliance with all HIPAA privacy regulations and data security standards</li>
-                        <li>Zero tolerance for discrimination, abuse, or neglect</li>
-                        <li>Continuous pursuit of excellence through feedback and improvement</li>
-                        <li>Affordable, value-driven services without compromising quality</li>
-                        <li>Advocacy for your best interests in all healthcare decisions</li>
-                    </ul>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="value-card">
+                            <h4><i class="bi bi-mortarboard-fill text-primary me-2"></i>Experienced Healthcare Professionals</h4>
+                            <p>Our team averages 10+ years of clinical experience with ongoing training in best practices and innovative care approaches.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="value-card">
+                            <h4><i class="bi bi-diagram-3-fill text-info me-2"></i>Comprehensive Care Coordination</h4>
+                            <p>We work seamlessly with your physicians, specialists, and therapists to ensure coordinated, comprehensive care.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="value-card">
+                            <h4><i class="bi bi-globe-americas text-success me-2"></i>Cultural Sensitivity & Diversity</h4>
+                            <p>Our diverse team respects different cultural backgrounds, languages, dietary preferences, and religious practices.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="value-card">
+                            <h4><i class="bi bi-people-fill text-warning me-2"></i>Low Caregiver-to-Patient Ratios</h4>
+                            <p>Manageable caseloads ensure caregivers can dedicate proper time and attention to each individual.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="value-card">
+                            <h4><i class="bi bi-laptop text-primary me-2"></i>Advanced Technology Integration</h4>
+                            <p>Electronic health records, secure communication platforms, and remote monitoring enhance care quality and safety.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="value-card">
+                            <h4><i class="bi bi-star-fill text-warning me-2"></i>Quality Assurance Programs</h4>
+                            <p>Regular supervisory visits, satisfaction surveys, and continuous quality improvement ensure excellent service delivery.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Patient Outcomes -->
-        <section class="section section-alt">
+        <section class="section bg-light">
             <div class="container">
-                <h2 style="text-align: center; margin-bottom: 40px;">Real Results That Matter</h2>
+                <div class="section-title">
+                    <h2>Real Results That Matter</h2>
+                    <p>Proven outcomes you can count on</p>
+                </div>
 
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <span class="stat-number">98%</span>
-                        <span class="stat-label">Patient Satisfaction Rate</span>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="stat-card">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">Patient Satisfaction</span>
+                        </div>
                     </div>
 
-                    <div class="stat-item">
-                        <span class="stat-number">95%</span>
-                        <span class="stat-label">Family Recommend Us</span>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="stat-card">
+                            <span class="stat-number">95%</span>
+                            <span class="stat-label">Family Recommend Us</span>
+                        </div>
                     </div>
 
-                    <div class="stat-item">
-                        <span class="stat-number">85%</span>
-                        <span class="stat-label">Improved Health Outcomes</span>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="stat-card">
+                            <span class="stat-number">85%</span>
+                            <span class="stat-label">Improved Health Outcomes</span>
+                        </div>
                     </div>
 
-                    <div class="stat-item">
-                        <span class="stat-number">92%</span>
-                        <span class="stat-label">Successfully Avoid Rehospitalization</span>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="stat-card">
+                            <span class="stat-number">92%</span>
+                            <span class="stat-label">Avoid Rehospitalization</span>
+                        </div>
                     </div>
                 </div>
 
-                <p style="text-align: center; margin-top: 40px; font-style: italic; color: var(--dark-gray);">
-                    *Based on internal patient satisfaction surveys and outcome tracking data from 2023-2024
+                <p class="text-center mt-5 fst-italic text-muted">
+                    <small>*Based on internal patient satisfaction surveys and outcome tracking data from 2023-2024</small>
                 </p>
             </div>
         </section>
@@ -413,147 +687,89 @@
         <!-- Testimonials -->
         <section class="section">
             <div class="container">
-                <h2 style="text-align: center; margin-bottom: 40px;">What Families Are Saying</h2>
+                <div class="section-title">
+                    <h2>What Families Are Saying</h2>
+                    <p>Real experiences from our satisfied clients</p>
+                </div>
 
-                <div class="card-grid">
-                    <div class="card">
-                        <p style="font-style: italic; margin-bottom: 15px;">
-                            "The care my mother received was exceptional. The nurses were knowledgeable, patient, and truly cared about her wellbeing. We couldn't have asked for better support during her recovery."
-                        </p>
-                        <p style="font-weight: 600; color: var(--primary-blue);">- Sarah M., Burlington</p>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="testimonial-card">
+                            <p>The care my mother received was exceptional. The nurses were knowledgeable, patient, and truly cared about her wellbeing. We couldn't have asked for better support during her recovery.</p>
+                            <p class="testimonial-author mb-0">- Sarah M., Burlington</p>
+                        </div>
                     </div>
 
-                    <div class="card">
-                        <p style="font-style: italic; margin-bottom: 15px;">
-                            "After my surgery, having professional care at home made all the difference. The team coordinated perfectly with my doctor and made me feel safe and comfortable throughout my recovery."
-                        </p>
-                        <p style="font-weight: 600; color: var(--primary-blue);">- Robert K., Lexington</p>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="testimonial-card">
+                            <p>After my surgery, having professional care at home made all the difference. The team coordinated perfectly with my doctor and made me feel safe and comfortable throughout my recovery.</p>
+                            <p class="testimonial-author mb-0">- Robert K., Lexington</p>
+                        </div>
                     </div>
 
-                    <div class="card">
-                        <p style="font-style: italic; margin-bottom: 15px;">
-                            "The companion care for my father has been wonderful. His caregiver is like family now. Dad looks forward to their visits and his mood has improved tremendously. Highly recommend!"
-                        </p>
-                        <p style="font-weight: 600; color: var(--primary-blue);">- Jennifer L., Woburn</p>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="testimonial-card">
+                            <p>The companion care for my father has been wonderful. His caregiver is like family now. Dad looks forward to their visits and his mood has improved tremendously. Highly recommend!</p>
+                            <p class="testimonial-author mb-0">- Jennifer L., Woburn</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Insurance & Payment -->
-        <section class="section section-alt">
+        <section class="section bg-light">
             <div class="container">
-                <h2 style="text-align: center; margin-bottom: 30px;">Flexible Payment Options</h2>
-                <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; font-size: 1.1rem;">
-                    We believe quality healthcare should be accessible. We work with major insurance providers and offer flexible payment arrangements to meet your needs.
-                </p>
-
-                <div class="service-list">
-                    <div class="service-item">
-                        <h4>Insurance Accepted</h4>
-                        <p>We work with Medicare, Medicaid, and most major private insurance plans. Our billing team handles claims processing and verification.</p>
-                    </div>
-
-                    <div class="service-item">
-                        <h4>Private Pay Options</h4>
-                        <p>Competitive rates for private pay clients with transparent pricing and flexible payment schedules available.</p>
-                    </div>
-
-                    <div class="service-item">
-                        <h4>Veteran Benefits</h4>
-                        <p>We assist veterans in accessing VA benefits and provide services covered under veteran healthcare programs.</p>
-                    </div>
-
-                    <div class="service-item">
-                        <h4>Long-Term Care Insurance</h4>
-                        <p>Experienced working with long-term care insurance policies to maximize your benefits and minimize out-of-pocket costs.</p>
-                    </div>
+                <div class="section-title">
+                    <h2>Flexible Payment Options</h2>
+                    <p>Quality healthcare should be accessible to everyone</p>
                 </div>
-            </div>
-        </section>
 
-        <!-- Service Area -->
-        <section class="section">
-            <div class="container">
-                <h2 style="text-align: center; margin-bottom: 30px;">Serving Burlington & Surrounding Communities</h2>
-                <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; font-size: 1.1rem;">
-                    We're proud to serve families throughout Burlington, Massachusetts and the greater Middlesex County area.
-                </p>
-
-                <div class="card">
-                    <h3 style="text-align: center;">Our Service Area Includes:</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px;">
-                        <ul style="list-style-position: inside;">
-                            <li>Burlington, MA</li>
-                            <li>Lexington, MA</li>
-                            <li>Woburn, MA</li>
-                            <li>Bedford, MA</li>
-                        </ul>
-                        <ul style="list-style-position: inside;">
-                            <li>Billerica, MA</li>
-                            <li>Wilmington, MA</li>
-                            <li>Winchester, MA</li>
-                            <li>Reading, MA</li>
-                        </ul>
-                        <ul style="list-style-position: inside;">
-                            <li>Stoneham, MA</li>
-                            <li>Wakefield, MA</li>
-                            <li>Arlington, MA</li>
-                            <li>And surrounding areas</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Getting Started -->
-        <section class="section section-alt">
-            <div class="container">
-                <h2 style="text-align: center; margin-bottom: 40px;">Getting Started Is Easy</h2>
-
-                <div class="service-list">
-                    <div class="service-item">
-                        <h4>1. Contact Us</h4>
-                        <p>Call, email, or fill out our online form to schedule a free, no-obligation consultation.</p>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="value-card">
+                            <h4><i class="bi bi-credit-card-fill text-primary me-2"></i>Insurance Accepted</h4>
+                            <p>We work with Medicare, Medicaid, and most major private insurance plans. Our billing team handles claims processing.</p>
+                        </div>
                     </div>
 
-                    <div class="service-item">
-                        <h4>2. Free Assessment</h4>
-                        <p>We'll conduct a comprehensive in-home assessment to understand your specific needs and preferences.</p>
+                    <div class="col-md-6">
+                        <div class="value-card">
+                            <h4><i class="bi bi-wallet2 text-success me-2"></i>Private Pay Options</h4>
+                            <p>Competitive rates for private pay clients with transparent pricing and flexible payment schedules available.</p>
+                        </div>
                     </div>
 
-                    <div class="service-item">
-                        <h4>3. Custom Care Plan</h4>
-                        <p>Receive a personalized care plan with transparent pricing and flexible scheduling options.</p>
+                    <div class="col-md-6">
+                        <div class="value-card">
+                            <h4><i class="bi bi-flag-fill text-danger me-2"></i>Veteran Benefits</h4>
+                            <p>We assist veterans in accessing VA benefits and provide services covered under veteran healthcare programs.</p>
+                        </div>
                     </div>
 
-                    <div class="service-item">
-                        <h4>4. Meet Your Team</h4>
-                        <p>We introduce you to your caregivers and ensure you're comfortable before care begins.</p>
-                    </div>
-
-                    <div class="service-item">
-                        <h4>5. Begin Care</h4>
-                        <p>Your dedicated care team starts providing services with ongoing monitoring and support.</p>
-                    </div>
-
-                    <div class="service-item">
-                        <h4>6. Continuous Support</h4>
-                        <p>Regular check-ins, care plan adjustments, and 24/7 availability ensure optimal outcomes.</p>
+                    <div class="col-md-6">
+                        <div class="value-card">
+                            <h4><i class="bi bi-file-earmark-medical text-info me-2"></i>Long-Term Care Insurance</h4>
+                            <p>Experienced working with long-term care insurance policies to maximize benefits and minimize out-of-pocket costs.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Call to Action -->
-        <section class="section">
-            <div class="container" style="text-align: center;">
-                <h2>Experience the Delite Difference Today</h2>
-                <p style="max-width: 700px; margin: 20px auto 30px; font-size: 1.1rem;">
+        <section class="section" style="background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue)); color: white;">
+            <div class="container text-center">
+                <h2 class="text-white mb-4">Experience the Delite Difference Today</h2>
+                <p style="max-width: 700px; margin: 0 auto 30px; font-size: 1.1rem; opacity: 0.95;">
                     Join hundreds of satisfied families who trust Delite Health Care Plus for compassionate, professional healthcare services in Burlington and surrounding communities.
                 </p>
-                <a href="get-in-touch.html" class="btn btn-primary" style="margin-right: 15px;">Schedule Free Consultation</a>
-                <a href="tel:+17819674014" class="btn btn-secondary">Call: (781) 967-4014</a>
+                <a href="get-in-touch.html" class="btn btn-secondary me-3">
+                    <i class="bi bi-calendar-check me-2"></i>Schedule Free Consultation
+                </a>
+                <a href="tel:+17819674014" class="btn btn-light">
+                    <i class="bi bi-telephone-fill me-2"></i>Call: (781) 967-4014
+                </a>
             </div>
         </section>
     </main>
@@ -561,18 +777,18 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Delite Health Care Plus LLC</h3>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <h5>Delite Health Care Plus LLC</h5>
                     <p>Providing compassionate, professional healthcare services to Burlington, MA and surrounding communities.</p>
-                    <p style="margin-top: 20px;">
+                    <p class="mt-3">
                         <strong>1500 District Avenue<br>
                         Burlington, MA 01803</strong>
                     </p>
                 </div>
 
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
+                <div class="col-md-6 col-lg-3">
+                    <h5>Quick Links</h5>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="our-story.html">Our Story</a></li>
@@ -583,21 +799,21 @@
                     </ul>
                 </div>
 
-                <div class="footer-section">
-                    <h3>Contact Information</h3>
+                <div class="col-md-6 col-lg-3">
+                    <h5>Contact Information</h5>
                     <ul>
-                        <li><a href="tel:+17819674014">📞 +1 (781) 967-4014</a></li>
-                        <li><a href="mailto:Nasifk@delitehealthcare.com">📧 Nasifk@delitehealthcare.com</a></li>
-                        <li><a href="https://www.DeliteHealthCare.com" target="_blank">🌐 www.DeliteHealthCare.com</a></li>
+                        <li><a href="tel:+17819674014"><i class="bi bi-telephone-fill me-2"></i>+1 (781) 967-4014</a></li>
+                        <li><a href="mailto:Nasifk@delitehealthcare.com"><i class="bi bi-envelope-fill me-2"></i>Nasifk@delitehealthcare.com</a></li>
+                        <li><a href="https://www.DeliteHealthCare.com" target="_blank"><i class="bi bi-globe me-2"></i>www.DeliteHealthCare.com</a></li>
                     </ul>
                 </div>
 
-                <div class="footer-section">
-                    <h3>Business Hours</h3>
+                <div class="col-md-6 col-lg-3">
+                    <h5>Business Hours</h5>
                     <p>Monday - Friday: 8:00 AM - 6:00 PM<br>
                     Saturday: By Appointment<br>
                     Sunday: Closed</p>
-                    <p style="margin-top: 15px;"><strong>24/7 Emergency Support Available</strong></p>
+                    <p class="mt-3"><strong>24/7 Emergency Support Available</strong></p>
                 </div>
             </div>
 

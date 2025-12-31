@@ -35,13 +35,13 @@
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css">
-    
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <style>
         :root {
             --primary-blue: #2563eb;
@@ -50,12 +50,12 @@
             --accent-red: #dc2626;
             --text-dark: #1f2937;
         }
-        
+
         body {
             font-family: 'Poppins', sans-serif;
             color: var(--text-dark);
         }
-        
+
         /* Top Bar */
         .top-bar {
             background: var(--primary-blue);
@@ -63,22 +63,22 @@
             padding: 10px 0;
             font-size: 14px;
         }
-        
+
         .top-bar a {
             color: white;
             text-decoration: none;
             margin: 0 15px;
         }
-        
+
         .top-bar a:hover { opacity: 0.8; }
-        
+
         /* Navigation */
         .navbar {
             background: white !important;
             box-shadow: 0 2px 15px rgba(0,0,0,0.1);
             padding: 15px 0;
         }
-        
+
         .navbar-brand {
             display: flex;
             align-items: center;
@@ -87,32 +87,32 @@
             font-size: 1.5rem;
             color: var(--primary-blue) !important;
         }
-        
+
         .navbar-brand img {
             height: 55px;
             width: 55px;
             object-fit: contain;
         }
-        
+
         .navbar-brand .brand-text {
             display: flex;
             flex-direction: column;
             line-height: 1.2;
         }
-        
+
         .brand-text .brand-name {
             font-size: 1.3rem;
             font-weight: 700;
             color: var(--primary-blue);
         }
-        
+
         .brand-text .brand-tagline {
             font-size: 0.7rem;
             font-weight: 400;
             color: var(--accent-red);
             letter-spacing: 1px;
         }
-        
+
         .navbar-nav .nav-link {
             font-weight: 500;
             color: var(--text-dark) !important;
@@ -121,18 +121,18 @@
             border-radius: 6px;
             transition: all 0.3s ease;
         }
-        
+
         .navbar-nav .nav-link:hover,
         .navbar-nav .nav-link.active {
             background: var(--light-blue);
             color: var(--primary-blue) !important;
         }
-        
+
         /* Dropdown on Hover */
         .navbar-nav .dropdown:hover .dropdown-menu {
             display: block;
         }
-        
+
         .dropdown-menu {
             border: none;
             box-shadow: 0 5px 20px rgba(0,0,0,0.15);
@@ -140,22 +140,206 @@
             padding: 10px 0;
             margin-top: 0;
         }
-        
+
         .dropdown-item {
             padding: 10px 25px;
             transition: all 0.3s ease;
         }
-        
+
         .dropdown-item:hover {
             background: var(--light-blue);
             color: var(--primary-blue);
             padding-left: 30px;
         }
-        
-        /* Keep existing page styles */
-        h1, h2, h3 { color: var(--dark-blue); }
-        .section { padding: 60px 0; }
-        .container { max-width: 1200px; }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        /* Section */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: #6b7280;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Service Cards */
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+            border: 1px solid #f3f4f6;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .service-card .icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--dark-blue);
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: #6b7280;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .service-card ul {
+            text-align: left;
+            color: #6b7280;
+            line-height: 1.8;
+        }
+
+        .service-card ul li {
+            margin-bottom: 8px;
+        }
+
+        /* Detail Cards */
+        .detail-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            border: 1px solid #f3f4f6;
+            margin-bottom: 30px;
+        }
+
+        .detail-card h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--dark-blue);
+            margin-bottom: 12px;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background: var(--primary-blue);
+            border: none;
+            padding: 12px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--accent-red);
+            border: none;
+            padding: 12px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: #b91c1c;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-blue);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        footer h5 {
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #dbeafe;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        footer a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 40px;
+            padding-top: 20px;
+            text-align: center;
+            color: #dbeafe;
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
     </style>
 
     <!-- JSON-LD Schema Markup -->
@@ -209,7 +393,7 @@
 </head>
 <body>
     <!-- Skip to Content Link -->
-    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    <a href="#main-content" class="skip-to-content visually-hidden-focusable">Skip to main content</a>
 
     <!-- Header -->
     <header>
@@ -282,311 +466,249 @@
 
     <!-- Main Content -->
     <main id="main-content">
-        <!-- Hero Section -->
-        <section class="hero">
+        <!-- Page Header -->
+        <section class="page-header">
             <div class="container">
-                <div class="hero-content">
-                    <h1>Our Care Solutions</h1>
-                    <p>Comprehensive healthcare services designed to meet your unique needs, delivered by experienced professionals committed to your health, comfort, and independence.</p>
+                <h1>Our Care Solutions</h1>
+                <p>Comprehensive healthcare services designed to meet your unique needs, delivered by experienced professionals committed to your health, comfort, and independence.</p>
+            </div>
+        </section>
+
+        <!-- Main Services Section -->
+        <section class="section bg-light">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Core Healthcare Services</h2>
+                    <p>Professional care solutions tailored to support your health journey</p>
                 </div>
-            </div>
-        </section>
 
-        <!-- Services Introduction -->
-        <section class="section">
-            <div class="container">
-                <h2 style="text-align: center; margin-bottom: 20px;">Personalized Healthcare When You Need It Most</h2>
-                <p style="text-align: center; max-width: 900px; margin: 0 auto 40px; font-size: 1.1rem; color: var(--dark-gray);">
-                    At Delite Health Care Plus LLC, we understand that every individual has unique healthcare needs. Our comprehensive range of services is designed to provide the right level of support, whether you need skilled medical care, assistance with daily activities, or professional companionship.
-                </p>
-            </div>
-        </section>
-
-        <!-- Skilled Nursing Care -->
-        <section class="section section-alt">
-            <div class="container">
-                <div class="card">
-                    <h2>🏥 Skilled Nursing Care</h2>
-                    <p style="font-size: 1.1rem; margin-bottom: 20px;">
-                        Our licensed registered nurses and practical nurses bring hospital-quality medical care directly to your home, ensuring you receive expert clinical attention in familiar, comfortable surroundings.
-                    </p>
-
-                    <h3>Services Include:</h3>
-                    <ul class="features-list">
-                        <li>Medication administration and management</li>
-                        <li>Wound care and dressing changes</li>
-                        <li>Vital signs monitoring and health assessments</li>
-                        <li>IV therapy and infusion management</li>
-                        <li>Catheter care and ostomy management</li>
-                        <li>Chronic disease monitoring (diabetes, hypertension, heart disease)</li>
-                        <li>Post-surgical care and recovery support</li>
-                        <li>Patient and family education on medical conditions</li>
-                        <li>Coordination with physicians and specialists</li>
-                    </ul>
-
-                    <p style="margin-top: 20px; font-style: italic;">
-                        <strong>Ideal for:</strong> Patients recovering from surgery or hospitalization, individuals managing chronic illnesses, or anyone requiring regular medical monitoring and intervention.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Personal Care Assistance -->
-        <section class="section">
-            <div class="container">
-                <div class="card">
-                    <h2>🤝 Personal Care Assistance</h2>
-                    <p style="font-size: 1.1rem; margin-bottom: 20px;">
-                        Compassionate support with activities of daily living, helping you maintain independence and dignity while receiving the assistance you need to live comfortably at home.
-                    </p>
-
-                    <h3>Services Include:</h3>
-                    <ul class="features-list">
-                        <li>Bathing and personal hygiene assistance</li>
-                        <li>Grooming, dressing, and toileting support</li>
-                        <li>Mobility assistance and transfer support</li>
-                        <li>Meal preparation and nutrition support</li>
-                        <li>Light housekeeping and laundry</li>
-                        <li>Medication reminders</li>
-                        <li>Shopping and errand assistance</li>
-                        <li>Ambulation and exercise support</li>
-                        <li>Incontinence care</li>
-                    </ul>
-
-                    <p style="margin-top: 20px; font-style: italic;">
-                        <strong>Ideal for:</strong> Seniors aging in place, individuals with limited mobility, or anyone needing help with daily tasks to maintain quality of life.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Rehabilitation Services -->
-        <section class="section section-alt">
-            <div class="container">
-                <div class="card">
-                    <h2>💪 Rehabilitation Services</h2>
-                    <p style="font-size: 1.1rem; margin-bottom: 20px;">
-                        Licensed therapists work one-on-one with you to restore function, improve mobility, and help you achieve maximum independence through personalized therapy programs.
-                    </p>
-
-                    <div class="service-list">
-                        <div class="service-item">
-                            <h4>Physical Therapy</h4>
-                            <p>Restore strength, flexibility, and mobility through targeted exercises, manual therapy, and pain management techniques. Ideal for post-surgery recovery, injury rehabilitation, and chronic pain management.</p>
-                        </div>
-
-                        <div class="service-item">
-                            <h4>Occupational Therapy</h4>
-                            <p>Learn adaptive techniques and use assistive devices to perform daily activities safely and independently. Focus on fine motor skills, cognitive function, and home safety modifications.</p>
-                        </div>
-
-                        <div class="service-item">
-                            <h4>Speech Therapy</h4>
-                            <p>Improve communication abilities, treat swallowing disorders, and address cognitive-linguistic challenges following stroke, neurological conditions, or injury.</p>
+                <div class="row g-4">
+                    <!-- Skilled Nursing Care -->
+                    <div class="col-md-6 col-lg-4" id="skilled-nursing">
+                        <div class="service-card">
+                            <div class="icon"><i class="bi bi-hospital text-danger"></i></div>
+                            <h3>Skilled Nursing Care</h3>
+                            <p>Licensed RNs and LPNs bringing hospital-quality medical care to your home.</p>
+                            <ul class="text-start">
+                                <li>Medication management</li>
+                                <li>Wound care & dressing</li>
+                                <li>IV therapy</li>
+                                <li>Vital signs monitoring</li>
+                                <li>Chronic disease management</li>
+                            </ul>
                         </div>
                     </div>
 
-                    <p style="margin-top: 20px; font-style: italic;">
-                        <strong>Ideal for:</strong> Post-stroke patients, individuals recovering from orthopedic surgery, those with neurological conditions, or anyone working to regain lost function.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Companion Care -->
-        <section class="section">
-            <div class="container">
-                <div class="card">
-                    <h2>❤️ Companion Care</h2>
-                    <p style="font-size: 1.1rem; margin-bottom: 20px;">
-                        Meaningful social interaction and emotional support to combat isolation and loneliness, promoting mental and emotional wellbeing through genuine companionship.
-                    </p>
-
-                    <h3>Services Include:</h3>
-                    <ul class="features-list">
-                        <li>Friendly conversation and social engagement</li>
-                        <li>Accompaniment to appointments and social events</li>
-                        <li>Recreational activities and hobbies</li>
-                        <li>Reading, games, and entertainment</li>
-                        <li>Technology assistance (phone, computer, tablet)</li>
-                        <li>Meal companionship and dining assistance</li>
-                        <li>Exercise and walking companion</li>
-                        <li>Emotional support and active listening</li>
-                        <li>Safety supervision and monitoring</li>
-                    </ul>
-
-                    <p style="margin-top: 20px; font-style: italic;">
-                        <strong>Ideal for:</strong> Socially isolated individuals, those living alone, family caregivers needing respite, or anyone who would benefit from regular social interaction.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Medical Staffing Solutions -->
-        <section class="section section-alt">
-            <div class="container">
-                <div class="card">
-                    <h2>🩺 Professional Medical Staffing</h2>
-                    <p style="font-size: 1.1rem; margin-bottom: 20px;">
-                        Reliable, qualified healthcare professionals for medical facilities, clinics, and healthcare organizations seeking temporary or permanent staffing solutions.
-                    </p>
-
-                    <h3>We Provide:</h3>
-                    <ul class="features-list">
-                        <li>Registered Nurses (RN) - all specialties</li>
-                        <li>Licensed Practical Nurses (LPN)</li>
-                        <li>Certified Nursing Assistants (CNA)</li>
-                        <li>Medical Assistants (MA)</li>
-                        <li>Physical, Occupational, and Speech Therapists</li>
-                        <li>Home Health Aides (HHA)</li>
-                        <li>Per diem, temporary, and permanent placements</li>
-                        <li>24/7 availability and on-call coverage</li>
-                        <li>Rigorous screening and credentialing process</li>
-                    </ul>
-
-                    <p style="margin-top: 20px; font-style: italic;">
-                        <strong>Ideal for:</strong> Hospitals, nursing homes, assisted living facilities, rehabilitation centers, medical practices, and home health agencies.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Chronic Care Management -->
-        <section class="section">
-            <div class="container">
-                <div class="card">
-                    <h2>🔍 Chronic Care Management</h2>
-                    <p style="font-size: 1.1rem; margin-bottom: 20px;">
-                        Comprehensive programs for managing ongoing health conditions, helping you maintain stability, prevent complications, and optimize your quality of life.
-                    </p>
-
-                    <h3>Conditions We Manage:</h3>
-                    <div class="service-list">
-                        <div class="service-item">
-                            <h4>Diabetes Management</h4>
-                            <p>Blood sugar monitoring, insulin administration, diet education, foot care, and complication prevention.</p>
-                        </div>
-
-                        <div class="service-item">
-                            <h4>Cardiac Care</h4>
-                            <p>Heart disease monitoring, blood pressure management, medication compliance, and lifestyle modification support.</p>
-                        </div>
-
-                        <div class="service-item">
-                            <h4>Respiratory Conditions</h4>
-                            <p>COPD, asthma, and other lung disease management including oxygen therapy, breathing treatments, and symptom monitoring.</p>
-                        </div>
-
-                        <div class="service-item">
-                            <h4>Neurological Disorders</h4>
-                            <p>Support for Parkinson's, multiple sclerosis, Alzheimer's, and other neurological conditions with specialized care approaches.</p>
-                        </div>
-
-                        <div class="service-item">
-                            <h4>Post-Hospitalization Care</h4>
-                            <p>Transition care ensuring safe recovery at home with close monitoring and coordination with your healthcare team.</p>
-                        </div>
-
-                        <div class="service-item">
-                            <h4>Pain Management</h4>
-                            <p>Chronic pain assessment and management strategies to improve comfort and function.</p>
+                    <!-- Personal Care -->
+                    <div class="col-md-6 col-lg-4" id="personal-care">
+                        <div class="service-card">
+                            <div class="icon"><i class="bi bi-person-heart text-primary"></i></div>
+                            <h3>Personal Care Assistance</h3>
+                            <p>Compassionate support with daily living activities to maintain independence.</p>
+                            <ul class="text-start">
+                                <li>Bathing & hygiene</li>
+                                <li>Grooming & dressing</li>
+                                <li>Mobility assistance</li>
+                                <li>Meal preparation</li>
+                                <li>Light housekeeping</li>
+                            </ul>
                         </div>
                     </div>
 
-                    <p style="margin-top: 20px; font-style: italic;">
-                        <strong>Ideal for:</strong> Anyone living with one or more chronic health conditions requiring ongoing medical supervision and support.
-                    </p>
+                    <!-- Rehabilitation -->
+                    <div class="col-md-6 col-lg-4" id="rehabilitation">
+                        <div class="service-card">
+                            <div class="icon"><i class="bi bi-activity text-success"></i></div>
+                            <h3>Rehabilitation Services</h3>
+                            <p>Licensed therapists helping you restore function and independence.</p>
+                            <ul class="text-start">
+                                <li>Physical therapy</li>
+                                <li>Occupational therapy</li>
+                                <li>Speech therapy</li>
+                                <li>Pain management</li>
+                                <li>Mobility training</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Companion Care -->
+                    <div class="col-md-6 col-lg-4" id="companion">
+                        <div class="service-card">
+                            <div class="icon"><i class="bi bi-hearts text-danger"></i></div>
+                            <h3>Companion Care</h3>
+                            <p>Meaningful social interaction and emotional support to combat isolation.</p>
+                            <ul class="text-start">
+                                <li>Friendly conversation</li>
+                                <li>Social engagement</li>
+                                <li>Recreational activities</li>
+                                <li>Appointment accompaniment</li>
+                                <li>Emotional support</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Medical Staffing -->
+                    <div class="col-md-6 col-lg-4" id="staffing">
+                        <div class="service-card">
+                            <div class="icon"><i class="bi bi-people-fill text-info"></i></div>
+                            <h3>Medical Staffing</h3>
+                            <p>Qualified healthcare professionals for facilities and organizations.</p>
+                            <ul class="text-start">
+                                <li>Registered Nurses (RN)</li>
+                                <li>Licensed Practical Nurses</li>
+                                <li>Certified Nursing Assistants</li>
+                                <li>Medical Assistants</li>
+                                <li>Therapy specialists</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Chronic Care Management -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <div class="icon"><i class="bi bi-clipboard2-pulse text-warning"></i></div>
+                            <h3>Chronic Care Management</h3>
+                            <p>Comprehensive programs for managing ongoing health conditions.</p>
+                            <ul class="text-start">
+                                <li>Diabetes management</li>
+                                <li>Cardiac care</li>
+                                <li>Respiratory conditions</li>
+                                <li>Neurological disorders</li>
+                                <li>Post-hospitalization care</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Specialized Programs -->
-        <section class="section section-alt">
+        <section class="section">
             <div class="container">
-                <h2 style="text-align: center; margin-bottom: 40px;">Specialized Care Programs</h2>
+                <div class="section-title">
+                    <h2>Specialized Care Programs</h2>
+                    <p>Targeted solutions for specific healthcare needs</p>
+                </div>
 
-                <div class="card-grid">
-                    <div class="card">
-                        <h3>Memory Care Support</h3>
-                        <p>Specialized care for individuals with Alzheimer's disease and other forms of dementia, focusing on safety, routine, and cognitive engagement.</p>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <div class="icon"><i class="bi bi-brain text-primary"></i></div>
+                            <h3>Memory Care Support</h3>
+                            <p>Specialized care for Alzheimer's and dementia, focusing on safety, routine, and cognitive engagement.</p>
+                        </div>
                     </div>
 
-                    <div class="card">
-                        <h3>Palliative Care</h3>
-                        <p>Comfort-focused care for serious illnesses, managing symptoms and providing emotional support for patients and families.</p>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <div class="icon"><i class="bi bi-heart-pulse-fill text-danger"></i></div>
+                            <h3>Palliative Care</h3>
+                            <p>Comfort-focused care for serious illnesses, managing symptoms and providing emotional support.</p>
+                        </div>
                     </div>
 
-                    <div class="card">
-                        <h3>Respite Care</h3>
-                        <p>Temporary relief for family caregivers, providing professional care so you can rest, recharge, or attend to personal matters.</p>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <div class="icon"><i class="bi bi-clock-history text-success"></i></div>
+                            <h3>Respite Care</h3>
+                            <p>Temporary relief for family caregivers, providing professional care so you can rest and recharge.</p>
+                        </div>
                     </div>
 
-                    <div class="card">
-                        <h3>24-Hour Care</h3>
-                        <p>Round-the-clock monitoring and assistance for individuals requiring continuous supervision and support.</p>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <div class="icon"><i class="bi bi-shield-fill-check text-info"></i></div>
+                            <h3>24-Hour Care</h3>
+                            <p>Round-the-clock monitoring and assistance for individuals requiring continuous supervision.</p>
+                        </div>
                     </div>
 
-                    <div class="card">
-                        <h3>Post-Operative Care</h3>
-                        <p>Specialized support during surgical recovery including wound care, pain management, and mobility assistance.</p>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <div class="icon"><i class="bi bi-bandaid-fill text-warning"></i></div>
+                            <h3>Post-Operative Care</h3>
+                            <p>Specialized support during surgical recovery including wound care and pain management.</p>
+                        </div>
                     </div>
 
-                    <div class="card">
-                        <h3>Nutrition Support</h3>
-                        <p>Meal planning, dietary education, and feeding assistance for individuals with special nutritional needs.</p>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <div class="icon"><i class="bi bi-egg-fried text-success"></i></div>
+                            <h3>Nutrition Support</h3>
+                            <p>Meal planning, dietary education, and feeding assistance for special nutritional needs.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- How It Works -->
-        <section class="section">
+        <section class="section bg-light">
             <div class="container">
-                <h2 style="text-align: center; margin-bottom: 40px;">How Our Care Process Works</h2>
+                <div class="section-title">
+                    <h2>How Our Care Process Works</h2>
+                    <p>Six simple steps to getting the care you need</p>
+                </div>
 
-                <div class="service-list">
-                    <div class="service-item">
-                        <h4>Step 1: Free Consultation</h4>
-                        <p>Contact us to schedule a no-obligation consultation. We'll discuss your needs, answer questions, and explain our services in detail.</p>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="detail-card">
+                            <h4><i class="bi bi-1-circle-fill text-primary me-2"></i>Free Consultation</h4>
+                            <p>Contact us to schedule a no-obligation consultation. We'll discuss your needs and answer questions.</p>
+                        </div>
                     </div>
 
-                    <div class="service-item">
-                        <h4>Step 2: Comprehensive Assessment</h4>
-                        <p>We conduct a thorough in-home assessment to understand your health status, living environment, and specific care requirements.</p>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="detail-card">
+                            <h4><i class="bi bi-2-circle-fill text-primary me-2"></i>Comprehensive Assessment</h4>
+                            <p>We conduct a thorough in-home assessment to understand your health status and care requirements.</p>
+                        </div>
                     </div>
 
-                    <div class="service-item">
-                        <h4>Step 3: Personalized Care Plan</h4>
-                        <p>Our team develops a customized care plan tailored to your unique needs, preferences, and goals in collaboration with you and your family.</p>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="detail-card">
+                            <h4><i class="bi bi-3-circle-fill text-primary me-2"></i>Personalized Care Plan</h4>
+                            <p>Our team develops a customized care plan tailored to your unique needs and goals.</p>
+                        </div>
                     </div>
 
-                    <div class="service-item">
-                        <h4>Step 4: Caregiver Matching</h4>
-                        <p>We carefully select and introduce caregivers whose skills, experience, and personality align with your needs and preferences.</p>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="detail-card">
+                            <h4><i class="bi bi-4-circle-fill text-primary me-2"></i>Caregiver Matching</h4>
+                            <p>We carefully select caregivers whose skills and personality align with your preferences.</p>
+                        </div>
                     </div>
 
-                    <div class="service-item">
-                        <h4>Step 5: Care Begins</h4>
-                        <p>Your dedicated care team starts providing services according to your schedule, with ongoing communication and coordination.</p>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="detail-card">
+                            <h4><i class="bi bi-5-circle-fill text-primary me-2"></i>Care Begins</h4>
+                            <p>Your dedicated care team starts providing services according to your schedule.</p>
+                        </div>
                     </div>
 
-                    <div class="service-item">
-                        <h4>Step 6: Continuous Monitoring</h4>
-                        <p>Regular assessments, quality checks, and care plan adjustments ensure you always receive optimal support as your needs evolve.</p>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="detail-card">
+                            <h4><i class="bi bi-6-circle-fill text-primary me-2"></i>Continuous Monitoring</h4>
+                            <p>Regular assessments and quality checks ensure you receive optimal support.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Call to Action -->
-        <section class="section section-alt">
-            <div class="container" style="text-align: center;">
-                <h2>Ready to Get Started?</h2>
-                <p style="max-width: 700px; margin: 20px auto 30px; font-size: 1.1rem;">
-                    Contact us today for a free consultation and learn how our comprehensive care solutions can improve your quality of life or that of your loved one.
+        <section class="section" style="background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue)); color: white;">
+            <div class="container text-center">
+                <h2 class="text-white mb-4">Ready to Get Started?</h2>
+                <p style="max-width: 700px; margin: 0 auto 30px; font-size: 1.1rem; opacity: 0.95;">
+                    Contact us today for a free consultation and learn how our comprehensive care solutions can improve your quality of life.
                 </p>
-                <a href="get-in-touch.html" class="btn btn-primary" style="margin-right: 15px;">Request Free Consultation</a>
-                <a href="tel:+17819674014" class="btn btn-secondary">Call: (781) 967-4014</a>
+                <a href="get-in-touch.html" class="btn btn-secondary me-3">
+                    <i class="bi bi-calendar-check me-2"></i>Request Free Consultation
+                </a>
+                <a href="tel:+17819674014" class="btn btn-light">
+                    <i class="bi bi-telephone-fill me-2"></i>Call: (781) 967-4014
+                </a>
             </div>
         </section>
     </main>
@@ -594,18 +716,18 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Delite Health Care Plus LLC</h3>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <h5>Delite Health Care Plus LLC</h5>
                     <p>Providing compassionate, professional healthcare services to Burlington, MA and surrounding communities.</p>
-                    <p style="margin-top: 20px;">
+                    <p class="mt-3">
                         <strong>1500 District Avenue<br>
                         Burlington, MA 01803</strong>
                     </p>
                 </div>
 
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
+                <div class="col-md-6 col-lg-3">
+                    <h5>Quick Links</h5>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="our-story.html">Our Story</a></li>
@@ -616,21 +738,21 @@
                     </ul>
                 </div>
 
-                <div class="footer-section">
-                    <h3>Contact Information</h3>
+                <div class="col-md-6 col-lg-3">
+                    <h5>Contact Information</h5>
                     <ul>
-                        <li><a href="tel:+17819674014">📞 +1 (781) 967-4014</a></li>
-                        <li><a href="mailto:Nasifk@delitehealthcare.com">📧 Nasifk@delitehealthcare.com</a></li>
-                        <li><a href="https://www.DeliteHealthCare.com" target="_blank">🌐 www.DeliteHealthCare.com</a></li>
+                        <li><a href="tel:+17819674014"><i class="bi bi-telephone-fill me-2"></i>+1 (781) 967-4014</a></li>
+                        <li><a href="mailto:Nasifk@delitehealthcare.com"><i class="bi bi-envelope-fill me-2"></i>Nasifk@delitehealthcare.com</a></li>
+                        <li><a href="https://www.DeliteHealthCare.com" target="_blank"><i class="bi bi-globe me-2"></i>www.DeliteHealthCare.com</a></li>
                     </ul>
                 </div>
 
-                <div class="footer-section">
-                    <h3>Business Hours</h3>
+                <div class="col-md-6 col-lg-3">
+                    <h5>Business Hours</h5>
                     <p>Monday - Friday: 8:00 AM - 6:00 PM<br>
                     Saturday: By Appointment<br>
                     Sunday: Closed</p>
-                    <p style="margin-top: 15px;"><strong>24/7 Emergency Support Available</strong></p>
+                    <p class="mt-3"><strong>24/7 Emergency Support Available</strong></p>
                 </div>
             </div>
 

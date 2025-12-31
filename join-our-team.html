@@ -35,13 +35,13 @@
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css">
-    
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <style>
         :root {
             --primary-blue: #2563eb;
@@ -50,12 +50,12 @@
             --accent-red: #dc2626;
             --text-dark: #1f2937;
         }
-        
+
         body {
             font-family: 'Poppins', sans-serif;
             color: var(--text-dark);
         }
-        
+
         /* Top Bar */
         .top-bar {
             background: var(--primary-blue);
@@ -63,22 +63,22 @@
             padding: 10px 0;
             font-size: 14px;
         }
-        
+
         .top-bar a {
             color: white;
             text-decoration: none;
             margin: 0 15px;
         }
-        
+
         .top-bar a:hover { opacity: 0.8; }
-        
+
         /* Navigation */
         .navbar {
             background: white !important;
             box-shadow: 0 2px 15px rgba(0,0,0,0.1);
             padding: 15px 0;
         }
-        
+
         .navbar-brand {
             display: flex;
             align-items: center;
@@ -87,32 +87,32 @@
             font-size: 1.5rem;
             color: var(--primary-blue) !important;
         }
-        
+
         .navbar-brand img {
             height: 55px;
             width: 55px;
             object-fit: contain;
         }
-        
+
         .navbar-brand .brand-text {
             display: flex;
             flex-direction: column;
             line-height: 1.2;
         }
-        
+
         .brand-text .brand-name {
             font-size: 1.3rem;
             font-weight: 700;
             color: var(--primary-blue);
         }
-        
+
         .brand-text .brand-tagline {
             font-size: 0.7rem;
             font-weight: 400;
             color: var(--accent-red);
             letter-spacing: 1px;
         }
-        
+
         .navbar-nav .nav-link {
             font-weight: 500;
             color: var(--text-dark) !important;
@@ -121,18 +121,18 @@
             border-radius: 6px;
             transition: all 0.3s ease;
         }
-        
+
         .navbar-nav .nav-link:hover,
         .navbar-nav .nav-link.active {
             background: var(--light-blue);
             color: var(--primary-blue) !important;
         }
-        
+
         /* Dropdown on Hover */
         .navbar-nav .dropdown:hover .dropdown-menu {
             display: block;
         }
-        
+
         .dropdown-menu {
             border: none;
             box-shadow: 0 5px 20px rgba(0,0,0,0.15);
@@ -140,22 +140,263 @@
             padding: 10px 0;
             margin-top: 0;
         }
-        
+
         .dropdown-item {
             padding: 10px 25px;
             transition: all 0.3s ease;
         }
-        
+
         .dropdown-item:hover {
             background: var(--light-blue);
             color: var(--primary-blue);
             padding-left: 30px;
         }
-        
-        /* Keep existing page styles */
-        h1, h2, h3 { color: var(--dark-blue); }
-        .section { padding: 60px 0; }
-        .container { max-width: 1200px; }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        /* Section */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: #6b7280;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Feature Cards */
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+            border: 1px solid #f3f4f6;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .feature-card .icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--dark-blue);
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: #6b7280;
+            line-height: 1.8;
+        }
+
+        /* Value Cards */
+        .value-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            border: 1px solid #f3f4f6;
+            border-left: 4px solid var(--primary-blue);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .value-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+            border-left-color: var(--accent-red);
+        }
+
+        .value-card h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--dark-blue);
+            margin-bottom: 12px;
+        }
+
+        .value-card p {
+            color: #6b7280;
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        /* Form Card */
+        .form-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            border: 1px solid #f3f4f6;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: var(--dark-blue);
+            margin-bottom: 8px;
+        }
+
+        .form-control, .form-select {
+            border-radius: 8px;
+            padding: 12px 15px;
+            border: 2px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.1);
+        }
+
+        .form-control::file-selector-button {
+            padding: 8px 20px;
+            border-radius: 6px;
+            border: none;
+            background: var(--light-blue);
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-right: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control::file-selector-button:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .form-check-input {
+            border: 2px solid #e5e7eb;
+            width: 1.2em;
+            height: 1.2em;
+        }
+
+        .form-check-input:checked {
+            background-color: var(--primary-blue);
+            border-color: var(--primary-blue);
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background: var(--primary-blue);
+            border: none;
+            padding: 12px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--accent-red);
+            border: none;
+            padding: 12px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: #b91c1c;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-blue);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        footer h5 {
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #dbeafe;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        footer a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 40px;
+            padding-top: 20px;
+            text-align: center;
+            color: #dbeafe;
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
     </style>
 
     <!-- JSON-LD Schema Markup -->
@@ -189,7 +430,7 @@
 </head>
 <body>
     <!-- Skip to Content Link -->
-    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    <a href="#main-content" class="skip-to-content visually-hidden-focusable">Skip to main content</a>
 
     <!-- Header -->
     <header>
@@ -262,168 +503,162 @@
 
     <!-- Main Content -->
     <main id="main-content">
-        <!-- Hero Section -->
-        <section class="hero">
+        <!-- Page Header -->
+        <section class="page-header">
             <div class="container">
-                <div class="hero-content">
-                    <h1>Join Our Team</h1>
-                    <p>Build a rewarding career making a real difference in people's lives. Join a team that values compassion, excellence, and professional growth in a supportive, fulfilling work environment.</p>
-                </div>
+                <h1>Join Our Team</h1>
+                <p>Build a rewarding career making a real difference in people's lives. Join a team that values compassion, excellence, and professional growth in a supportive, fulfilling work environment.</p>
             </div>
         </section>
 
         <!-- Why Work With Us -->
-        <section class="section">
+        <section class="section bg-light">
             <div class="container">
-                <h2 style="text-align: center; margin-bottom: 40px;">Why Work at Delite Health Care Plus</h2>
+                <div class="section-title">
+                    <h2>Why Work at Delite Health Care Plus</h2>
+                    <p>A career where you make a difference every day</p>
+                </div>
 
-                <div class="card-grid">
-                    <div class="card">
-                        <div class="card-icon">💼</div>
-                        <h3>Meaningful Work</h3>
-                        <p>Make a genuine impact in patients' lives every day. See the direct results of your compassionate care and clinical expertise.</p>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card">
+                            <div class="icon"><i class="bi bi-heart-pulse-fill text-danger"></i></div>
+                            <h3>Meaningful Work</h3>
+                            <p>Make a genuine impact in patients' lives every day. See the direct results of your compassionate care and clinical expertise.</p>
+                        </div>
                     </div>
 
-                    <div class="card">
-                        <div class="card-icon">📚</div>
-                        <h3>Professional Development</h3>
-                        <p>Access to continuing education, training programs, certification support, and clear career advancement pathways.</p>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card">
+                            <div class="icon"><i class="bi bi-book-fill text-primary"></i></div>
+                            <h3>Professional Development</h3>
+                            <p>Access to continuing education, training programs, certification support, and clear career advancement pathways.</p>
+                        </div>
                     </div>
 
-                    <div class="card">
-                        <div class="card-icon">⚖️</div>
-                        <h3>Work-Life Balance</h3>
-                        <p>Flexible scheduling options, reasonable caseloads, and respect for personal time help prevent burnout.</p>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card">
+                            <div class="icon"><i class="bi bi-calendar-check text-success"></i></div>
+                            <h3>Work-Life Balance</h3>
+                            <p>Flexible scheduling options, reasonable caseloads, and respect for personal time help prevent burnout.</p>
+                        </div>
                     </div>
 
-                    <div class="card">
-                        <div class="card-icon">💰</div>
-                        <h3>Competitive Compensation</h3>
-                        <p>Industry-leading pay rates, comprehensive benefits package, and performance-based incentives.</p>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card">
+                            <div class="icon"><i class="bi bi-currency-dollar text-success"></i></div>
+                            <h3>Competitive Compensation</h3>
+                            <p>Industry-leading pay rates, comprehensive benefits package, and performance-based incentives.</p>
+                        </div>
                     </div>
 
-                    <div class="card">
-                        <div class="card-icon">🤝</div>
-                        <h3>Supportive Team</h3>
-                        <p>Work alongside experienced, caring professionals in a collaborative environment with strong leadership support.</p>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card">
+                            <div class="icon"><i class="bi bi-people-fill text-info"></i></div>
+                            <h3>Supportive Team</h3>
+                            <p>Work alongside experienced, caring professionals in a collaborative environment with strong leadership support.</p>
+                        </div>
                     </div>
 
-                    <div class="card">
-                        <div class="card-icon">🎯</div>
-                        <h3>Autonomy & Respect</h3>
-                        <p>Your clinical judgment is valued. We empower healthcare professionals to make decisions and provide optimal care.</p>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card">
+                            <div class="icon"><i class="bi bi-hand-thumbs-up-fill text-warning"></i></div>
+                            <h3>Autonomy & Respect</h3>
+                            <p>Your clinical judgment is valued. We empower healthcare professionals to make decisions and provide optimal care.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Current Opportunities -->
-        <section class="section section-alt">
-            <div class="container">
-                <h2 style="text-align: center; margin-bottom: 40px;">Current Opportunities</h2>
-
-                <div class="service-list">
-                    <div class="service-item">
-                        <h4>Registered Nurses (RN)</h4>
-                        <p>Licensed RNs for skilled nursing care, case management, and patient assessment. Full-time, part-time, and per diem positions available.</p>
-                    </div>
-
-                    <div class="service-item">
-                        <h4>Licensed Practical Nurses (LPN)</h4>
-                        <p>Experienced LPNs for home health care, medication administration, and clinical support. Flexible scheduling options.</p>
-                    </div>
-
-                    <div class="service-item">
-                        <h4>Certified Nursing Assistants (CNA)</h4>
-                        <p>Compassionate CNAs for personal care, vital sign monitoring, and daily living assistance. All shifts available.</p>
-                    </div>
-
-                    <div class="service-item">
-                        <h4>Home Health Aides (HHA)</h4>
-                        <p>Caring individuals to assist with personal care, companionship, and household support. Training provided for qualified candidates.</p>
-                    </div>
-
-                    <div class="service-item">
-                        <h4>Physical Therapists (PT)</h4>
-                        <p>Licensed PTs for home-based rehabilitation services. Competitive pay and flexible caseloads.</p>
-                    </div>
-
-                    <div class="service-item">
-                        <h4>Occupational Therapists (OT)</h4>
-                        <p>Skilled OTs to help patients regain independence through adaptive strategies and therapeutic interventions.</p>
-                    </div>
-
-                    <div class="service-item">
-                        <h4>Speech-Language Pathologists (SLP)</h4>
-                        <p>Licensed SLPs for communication and swallowing disorders. Part-time and per diem positions available.</p>
-                    </div>
-
-                    <div class="service-item">
-                        <h4>Care Coordinators</h4>
-                        <p>Organized professionals to manage care plans, coordinate services, and communicate with families and healthcare teams.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Benefits -->
         <section class="section">
             <div class="container">
-                <h2 style="text-align: center; margin-bottom: 40px;">Comprehensive Benefits Package</h2>
+                <div class="section-title">
+                    <h2>Current Opportunities</h2>
+                    <p>Join our growing team of healthcare professionals</p>
+                </div>
 
-                <div style="max-width: 900px; margin: 0 auto;">
-                    <ul class="features-list">
-                        <li>Competitive hourly rates and salary packages</li>
-                        <li>Health, dental, and vision insurance</li>
-                        <li>401(k) retirement plan with company matching</li>
-                        <li>Paid time off (PTO) and holiday pay</li>
-                        <li>Continuing education reimbursement</li>
-                        <li>Professional license renewal support</li>
-                        <li>Mileage reimbursement for home visits</li>
-                        <li>Flexible scheduling and shift options</li>
-                        <li>Employee assistance program (EAP)</li>
-                        <li>Career advancement opportunities</li>
-                        <li>Sign-on bonuses for qualified positions</li>
-                        <li>Referral bonuses for successful hires</li>
-                    </ul>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="value-card">
+                            <h4><i class="bi bi-hospital text-danger me-2"></i>Registered Nurses (RN)</h4>
+                            <p>Licensed RNs for skilled nursing care, case management, and patient assessment. Full-time, part-time, and per diem positions available.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="value-card">
+                            <h4><i class="bi bi-heart-pulse text-primary me-2"></i>Licensed Practical Nurses (LPN)</h4>
+                            <p>Experienced LPNs for home health care, medication administration, and clinical support. Flexible scheduling options.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="value-card">
+                            <h4><i class="bi bi-person-check-fill text-success me-2"></i>Certified Nursing Assistants (CNA)</h4>
+                            <p>Compassionate CNAs for personal care, vital sign monitoring, and daily living assistance. All shifts available.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="value-card">
+                            <h4><i class="bi bi-person-heart text-info me-2"></i>Home Health Aides (HHA)</h4>
+                            <p>Caring individuals to assist with personal care, companionship, and household support. Training provided for qualified candidates.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="value-card">
+                            <h4><i class="bi bi-activity text-warning me-2"></i>Physical Therapists (PT)</h4>
+                            <p>Licensed PTs for home-based rehabilitation services. Competitive pay and flexible caseloads.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="value-card">
+                            <h4><i class="bi bi-clipboard-pulse text-primary me-2"></i>Care Coordinators</h4>
+                            <p>Organized professionals to manage care plans, coordinate services, and communicate with families and healthcare teams.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- What We Look For -->
-        <section class="section section-alt">
+        <!-- Benefits Section -->
+        <section class="section bg-light">
             <div class="container">
-                <h2 style="text-align: center; margin-bottom: 40px;">What We Look for in Team Members</h2>
+                <div class="section-title">
+                    <h2>Comprehensive Benefits Package</h2>
+                    <p>We invest in our team members</p>
+                </div>
 
-                <div class="card-grid">
-                    <div class="card">
-                        <h3>Clinical Competence</h3>
-                        <p>Current licensure/certification, strong clinical skills, and commitment to evidence-based practice and continuous learning.</p>
-                    </div>
-
-                    <div class="card">
-                        <h3>Compassion & Empathy</h3>
-                        <p>Genuine caring for patients, ability to connect emotionally, and dedication to treating everyone with dignity and respect.</p>
-                    </div>
-
-                    <div class="card">
-                        <h3>Reliability & Professionalism</h3>
-                        <p>Dependable, punctual, excellent communication skills, and commitment to maintaining professional standards.</p>
-                    </div>
-
-                    <div class="card">
-                        <h3>Adaptability</h3>
-                        <p>Flexible, able to work independently, comfortable in home settings, and skilled at problem-solving in varied situations.</p>
-                    </div>
-
-                    <div class="card">
-                        <h3>Team Player</h3>
-                        <p>Collaborative attitude, willingness to support colleagues, and commitment to coordinated patient care.</p>
-                    </div>
-
-                    <div class="card">
-                        <h3>Cultural Competence</h3>
-                        <p>Respect for diversity, ability to work with people from varied backgrounds, and sensitivity to cultural differences.</p>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="feature-card text-start">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Competitive hourly rates and salary packages</li>
+                                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Health, dental, and vision insurance</li>
+                                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>401(k) retirement plan with company matching</li>
+                                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Paid time off (PTO) and holiday pay</li>
+                                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Continuing education reimbursement</li>
+                                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Professional license renewal support</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Mileage reimbursement for home visits</li>
+                                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Flexible scheduling and shift options</li>
+                                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Employee assistance program (EAP)</li>
+                                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Career advancement opportunities</li>
+                                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Sign-on bonuses for qualified positions</li>
+                                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Referral bonuses for successful hires</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -432,120 +667,122 @@
         <!-- Application Form -->
         <section class="section">
             <div class="container">
-                <h2 style="text-align: center; margin-bottom: 30px;">Apply Now</h2>
-                <p style="text-align: center; max-width: 700px; margin: 0 auto 40px; font-size: 1.1rem;">
-                    Take the first step toward a rewarding career. Complete the application form below and we'll contact you to discuss opportunities.
-                </p>
+                <div class="section-title">
+                    <h2>Apply Now</h2>
+                    <p>Take the first step toward a rewarding career with us</p>
+                </div>
 
-                <div style="max-width: 700px; margin: 0 auto;">
-                    <form id="careerForm" action="mailto:Nasifk@delitehealthcare.com" method="POST" enctype="multipart/form-data" class="card">
-                        <div class="form-group">
-                            <label for="fullName">Full Name <span style="color: var(--accent-red);">*</span></label>
-                            <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="form-card">
+                            <form id="careerForm" action="mailto:Nasifk@delitehealthcare.com" method="POST" enctype="multipart/form-data">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="fullName" class="form-label">Full Name <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="fullName" name="fullName" required placeholder="Enter your full name">
+                                    </div>
+
+                                    <div class="col-md-6 mb-3">
+                                        <label for="email" class="form-label">Email Address <span class="text-danger">*</span></label>
+                                        <input type="email" class="form-control" id="email" name="email" required placeholder="your.email@example.com">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="phone" class="form-label">Phone Number <span class="text-danger">*</span></label>
+                                        <input type="tel" class="form-control" id="phone" name="phone" required placeholder="(___) ___-____">
+                                    </div>
+
+                                    <div class="col-md-6 mb-3">
+                                        <label for="position" class="form-label">Position Interested In <span class="text-danger">*</span></label>
+                                        <select class="form-select" id="position" name="position" required>
+                                            <option value="">Select a position</option>
+                                            <option value="registered-nurse">Registered Nurse (RN)</option>
+                                            <option value="licensed-practical-nurse">Licensed Practical Nurse (LPN)</option>
+                                            <option value="certified-nursing-assistant">Certified Nursing Assistant (CNA)</option>
+                                            <option value="home-health-aide">Home Health Aide (HHA)</option>
+                                            <option value="physical-therapist">Physical Therapist (PT)</option>
+                                            <option value="occupational-therapist">Occupational Therapist (OT)</option>
+                                            <option value="speech-pathologist">Speech-Language Pathologist (SLP)</option>
+                                            <option value="care-coordinator">Care Coordinator</option>
+                                            <option value="other">Other Position</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="experience" class="form-label">Years of Experience</label>
+                                        <select class="form-select" id="experience" name="experience">
+                                            <option value="">Select experience level</option>
+                                            <option value="0-1">Less than 1 year</option>
+                                            <option value="1-3">1-3 years</option>
+                                            <option value="3-5">3-5 years</option>
+                                            <option value="5-10">5-10 years</option>
+                                            <option value="10+">10+ years</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-6 mb-3">
+                                        <label for="availability" class="form-label">Availability</label>
+                                        <select class="form-select" id="availability" name="availability">
+                                            <option value="">Select availability</option>
+                                            <option value="full-time">Full-Time</option>
+                                            <option value="part-time">Part-Time</option>
+                                            <option value="per-diem">Per Diem</option>
+                                            <option value="flexible">Flexible</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="resume" class="form-label">Upload Resume <span class="text-danger">*</span></label>
+                                    <input type="file" class="form-control" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+                                    <small class="text-muted">Accepted formats: PDF, DOC, DOCX (Max size: 5MB)</small>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="coverLetter" class="form-label">Cover Letter / Additional Information</label>
+                                    <textarea class="form-control" id="coverLetter" name="coverLetter" rows="5" placeholder="Tell us why you'd like to join our team..."></textarea>
+                                </div>
+
+                                <div class="mb-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="consent" name="consent" required>
+                                        <label class="form-check-label" for="consent">
+                                            I authorize Delite Health Care Plus LLC to contact me regarding this application and verify my credentials.
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary w-100 mb-3">
+                                    <i class="bi bi-send-fill me-2"></i>Submit Application
+                                </button>
+
+                                <p class="text-center text-muted small mb-0">
+                                    <i class="bi bi-shield-check me-1"></i>Delite Health Care Plus LLC is an equal opportunity employer committed to diversity and inclusion.
+                                </p>
+                            </form>
                         </div>
-
-                        <div class="form-group">
-                            <label for="email">Email Address <span style="color: var(--accent-red);">*</span></label>
-                            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone">Phone Number <span style="color: var(--accent-red);">*</span></label>
-                            <input type="tel" id="phone" name="phone" required placeholder="(___) ___-____">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="position">Position Interested In <span style="color: var(--accent-red);">*</span></label>
-                            <select id="position" name="position" required>
-                                <option value="">Select a position</option>
-                                <option value="registered-nurse">Registered Nurse (RN)</option>
-                                <option value="licensed-practical-nurse">Licensed Practical Nurse (LPN)</option>
-                                <option value="certified-nursing-assistant">Certified Nursing Assistant (CNA)</option>
-                                <option value="home-health-aide">Home Health Aide (HHA)</option>
-                                <option value="physical-therapist">Physical Therapist (PT)</option>
-                                <option value="occupational-therapist">Occupational Therapist (OT)</option>
-                                <option value="speech-pathologist">Speech-Language Pathologist (SLP)</option>
-                                <option value="care-coordinator">Care Coordinator</option>
-                                <option value="other">Other Position</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="experience">Years of Experience</label>
-                            <select id="experience" name="experience">
-                                <option value="">Select experience level</option>
-                                <option value="0-1">Less than 1 year</option>
-                                <option value="1-3">1-3 years</option>
-                                <option value="3-5">3-5 years</option>
-                                <option value="5-10">5-10 years</option>
-                                <option value="10+">10+ years</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="availability">Availability</label>
-                            <select id="availability" name="availability">
-                                <option value="">Select availability</option>
-                                <option value="full-time">Full-Time</option>
-                                <option value="part-time">Part-Time</option>
-                                <option value="per-diem">Per Diem</option>
-                                <option value="flexible">Flexible</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="resume">Upload Resume <span style="color: var(--accent-red);">*</span></label>
-                            <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
-                            <p style="font-size: 0.9rem; color: var(--medium-gray); margin-top: 5px;">
-                                Accepted formats: PDF, DOC, DOCX (Max size: 5MB)
-                            </p>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="coverLetter">Cover Letter / Additional Information</label>
-                            <textarea id="coverLetter" name="coverLetter" rows="5" placeholder="Tell us why you'd like to join our team..."></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
-                                <input type="checkbox" id="consent" name="consent" required>
-                                <span>I authorize Delite Health Care Plus LLC to contact me regarding this application and verify my credentials.</span>
-                            </label>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px;">
-                            Submit Application
-                        </button>
-
-                        <p style="text-align: center; margin-top: 20px; font-size: 0.9rem; color: var(--dark-gray);">
-                            Delite Health Care Plus LLC is an equal opportunity employer committed to diversity and inclusion.
-                        </p>
-                    </form>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Equal Opportunity -->
-        <section class="section section-alt">
-            <div class="container">
-                <div style="max-width: 900px; margin: 0 auto; text-align: center;">
-                    <h2 style="margin-bottom: 20px;">Equal Opportunity Employer</h2>
-                    <p style="font-size: 1.1rem; line-height: 1.8;">
-                        Delite Health Care Plus LLC is committed to creating a diverse and inclusive workplace. We provide equal employment opportunities to all qualified applicants without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, age, disability, veteran status, or any other protected characteristic. We celebrate diversity and are dedicated to fostering an environment where all team members can thrive.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact for Questions -->
-        <section class="section">
-            <div class="container" style="text-align: center;">
-                <h2>Questions About Career Opportunities?</h2>
-                <p style="max-width: 700px; margin: 20px auto 30px; font-size: 1.1rem;">
+        <!-- Call to Action -->
+        <section class="section bg-light">
+            <div class="container text-center">
+                <h2 class="mb-4">Questions About Career Opportunities?</h2>
+                <p style="max-width: 700px; margin: 0 auto 30px; font-size: 1.1rem;">
                     Our Human Resources team is here to help. Contact us to learn more about available positions, benefits, and our hiring process.
                 </p>
-                <a href="mailto:Nasifk@delitehealthcare.com" class="btn btn-primary" style="margin-right: 15px;">Email HR Department</a>
-                <a href="tel:+17819674014" class="btn btn-secondary">Call: (781) 967-4014</a>
+                <a href="mailto:Nasifk@delitehealthcare.com" class="btn btn-primary me-3">
+                    <i class="bi bi-envelope-fill me-2"></i>Email HR Department
+                </a>
+                <a href="tel:+17819674014" class="btn btn-secondary">
+                    <i class="bi bi-telephone-fill me-2"></i>Call: (781) 967-4014
+                </a>
             </div>
         </section>
     </main>
@@ -553,18 +790,18 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Delite Health Care Plus LLC</h3>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <h5>Delite Health Care Plus LLC</h5>
                     <p>Providing compassionate, professional healthcare services to Burlington, MA and surrounding communities.</p>
-                    <p style="margin-top: 20px;">
+                    <p class="mt-3">
                         <strong>1500 District Avenue<br>
                         Burlington, MA 01803</strong>
                     </p>
                 </div>
 
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
+                <div class="col-md-6 col-lg-3">
+                    <h5>Quick Links</h5>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="our-story.html">Our Story</a></li>
@@ -575,21 +812,21 @@
                     </ul>
                 </div>
 
-                <div class="footer-section">
-                    <h3>Contact Information</h3>
+                <div class="col-md-6 col-lg-3">
+                    <h5>Contact Information</h5>
                     <ul>
-                        <li><a href="tel:+17819674014">📞 +1 (781) 967-4014</a></li>
-                        <li><a href="mailto:Nasifk@delitehealthcare.com">📧 Nasifk@delitehealthcare.com</a></li>
-                        <li><a href="https://www.DeliteHealthCare.com" target="_blank">🌐 www.DeliteHealthCare.com</a></li>
+                        <li><a href="tel:+17819674014"><i class="bi bi-telephone-fill me-2"></i>+1 (781) 967-4014</a></li>
+                        <li><a href="mailto:Nasifk@delitehealthcare.com"><i class="bi bi-envelope-fill me-2"></i>Nasifk@delitehealthcare.com</a></li>
+                        <li><a href="https://www.DeliteHealthCare.com" target="_blank"><i class="bi bi-globe me-2"></i>www.DeliteHealthCare.com</a></li>
                     </ul>
                 </div>
 
-                <div class="footer-section">
-                    <h3>Business Hours</h3>
+                <div class="col-md-6 col-lg-3">
+                    <h5>Business Hours</h5>
                     <p>Monday - Friday: 8:00 AM - 6:00 PM<br>
                     Saturday: By Appointment<br>
                     Sunday: Closed</p>
-                    <p style="margin-top: 15px;"><strong>24/7 Emergency Support Available</strong></p>
+                    <p class="mt-3"><strong>24/7 Emergency Support Available</strong></p>
                 </div>
             </div>
 
