@@ -675,7 +675,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="form-card">
-                            <form id="careerForm" action="mailto:Nasifk@delitehealthcare.com" method="POST" enctype="multipart/form-data">
+                            <form id="careerForm">
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label for="fullName" class="form-label">Full Name <span class="text-danger">*</span></label>
@@ -838,5 +838,115 @@
 
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Career Form Submission Script -->
+    <script>
+        document.getElementById('careerForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+
+            // Show loading state
+            submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Submitting Application...';
+            submitBtn.disabled = true;
+
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+
+            // Get resume file name
+            const resumeFile = this.querySelector('input[type="file"]').files[0];
+            const resumeFileName = resumeFile ? resumeFile.name : 'No resume attached';
+
+            // Create email body
+            const emailBody = `
+New Job Application from Delite Healthcare Website
+
+APPLICANT INFORMATION:
+Name: ${data.fullName}
+Email: ${data.email}
+Phone: ${data.phone}
+Location: ${data.location || 'Not specified'}
+
+POSITION APPLIED FOR:
+${data.position}
+
+EXPERIENCE & QUALIFICATIONS:
+Years of Experience: ${data.experience || 'Not specified'}
+Education: ${data.education || 'Not specified'}
+Certifications: ${data.certifications || 'None specified'}
+
+AVAILABILITY:
+Start Date: ${data.startDate || 'Flexible'}
+Employment Type: ${data.employmentType || 'Not specified'}
+
+COVER LETTER / ADDITIONAL INFORMATION:
+${data.coverLetter || 'No additional information provided'}
+
+RESUME:
+${resumeFileName}
+${resumeFile ? 'Note: Resume file needs to be requested separately or applicant should email it directly.' : ''}
+
+LEGAL:
+Authorized to work in US: ${data.workAuthorization ? 'Yes' : 'Not confirmed'}
+
+---
+This application was submitted via the website careers form.
+Applicant Email: ${data.email}
+Applicant Phone: ${data.phone}
+            `.trim();
+
+            try {
+                // Create mailto link with all form data
+                const mailtoLink = `mailto:Nasifk@delitehealthcare.com?subject=${encodeURIComponent('Job Application: ' + data.position + ' - ' + data.fullName)}&body=${encodeURIComponent(emailBody)}`;
+
+                // Show success message first
+                showMessage('success', 'Application Submitted Successfully!', `Thank you for applying! We have received your application for ${data.position}. ${resumeFile ? 'Please check your email client to attach your resume file and send the email.' : 'Our HR team will review your application and contact you soon.'}`);
+
+                // Reset form
+                this.reset();
+
+                // Open email client after a brief delay
+                if (resumeFile) {
+                    setTimeout(() => {
+                        window.open(mailtoLink, '_blank');
+                    }, 2000);
+                } else {
+                    // For applications without resume, just send via email client
+                    window.open(mailtoLink, '_blank');
+                }
+
+            } catch (error) {
+                showMessage('error', 'Submission Error', 'There was an error submitting your application. Please email your resume directly to Nasifk@delitehealthcare.com');
+            }
+
+            // Reset button
+            submitBtn.innerHTML = originalBtnText;
+            submitBtn.disabled = false;
+        });
+
+        function showMessage(type, title, message) {
+            const alertDiv = document.createElement('div');
+            alertDiv.className = `alert alert-${type === 'success' ? 'success' : 'danger'} alert-dismissible fade show position-fixed`;
+            alertDiv.style.cssText = 'top: 100px; right: 20px; z-index: 9999; min-width: 400px; max-width: 500px; box-shadow: 0 10px 40px rgba(0,0,0,0.2);';
+            alertDiv.innerHTML = `
+                <div class="d-flex align-items-start">
+                    <i class="bi bi-${type === 'success' ? 'check-circle-fill' : 'exclamation-circle-fill'} fs-4 me-3 text-${type === 'success' ? 'success' : 'danger'}"></i>
+                    <div>
+                        <h6 class="alert-heading mb-1"><strong>${title}</strong></h6>
+                        <p class="mb-0">${message}</p>
+                    </div>
+                    <button type="button" class="btn-close ms-3" data-bs-dismiss="alert"></button>
+                </div>
+            `;
+            document.body.appendChild(alertDiv);
+
+            // Auto remove after 10 seconds
+            setTimeout(() => {
+                alertDiv.remove();
+            }, 10000);
+        }
+    </script>
 </body>
 </html>
