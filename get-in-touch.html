@@ -964,7 +964,7 @@ This inquiry was submitted via the website contact form.
                         from_name: data.name,
                         email: data.email,
                         message: emailBody,
-                        to_email: 'care@delitehealthcare.com'
+                        to_email: 'Nasifk@delitehealthcare.com'
                     })
                 });
 
@@ -974,7 +974,7 @@ This inquiry was submitted via the website contact form.
 
             } catch (error) {
                 // Fallback: Open email client
-                const mailtoLink = `mailto:care@delitehealthcare.com?subject=Contact Form: ${encodeURIComponent(data.subject || 'General Inquiry')}&body=${encodeURIComponent(emailBody)}`;
+                const mailtoLink = `mailto:Nasifk@delitehealthcare.com?subject=Contact Form: ${encodeURIComponent(data.subject || 'General Inquiry')}&body=${encodeURIComponent(emailBody)}`;
                 window.location.href = mailtoLink;
 
                 showMessage('success', 'Opening Email Client', 'Your email client will open. Please send the pre-filled message.');
