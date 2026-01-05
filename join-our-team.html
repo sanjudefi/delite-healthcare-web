@@ -479,7 +479,6 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="our-care-solutions.html#skilled-nursing">Skilled Nursing Care</a></li>
                             <li><a class="dropdown-item" href="our-care-solutions.html#personal-care">Personal Care Assistance</a></li>
-                            <li><a class="dropdown-item" href="our-care-solutions.html#rehabilitation">Rehabilitation Services</a></li>
                             <li><a class="dropdown-item" href="our-care-solutions.html#companion">Companion Care</a></li>
                             <li><a class="dropdown-item" href="our-care-solutions.html#staffing">Medical Staffing</a></li>
                             <li><hr class="dropdown-divider"></li>
@@ -610,13 +609,6 @@
 
                     <div class="col-md-6">
                         <div class="value-card">
-                            <h4><i class="bi bi-activity text-warning me-2"></i>Physical Therapists (PT)</h4>
-                            <p>Licensed PTs for home-based rehabilitation services. Competitive pay and flexible caseloads.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="value-card">
                             <h4><i class="bi bi-clipboard-pulse text-primary me-2"></i>Care Coordinators</h4>
                             <p>Organized professionals to manage care plans, coordinate services, and communicate with families and healthcare teams.</p>
                         </div>
@@ -640,7 +632,6 @@
                                 <div class="col-md-6">
                                     <ul class="list-unstyled">
                                         <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Competitive hourly rates and salary packages</li>
-                                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Paid time off (PTO) and holiday pay</li>
                                         <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Continuing education reimbursement</li>
                                         <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Professional license renewal support</li>
                                     </ul>
@@ -700,7 +691,6 @@
                                             <option value="licensed-practical-nurse">Licensed Practical Nurse (LPN)</option>
                                             <option value="certified-nursing-assistant">Certified Nursing Assistant (CNA)</option>
                                             <option value="home-health-aide">Home Health Aide (HHA)</option>
-                                            <option value="physical-therapist">Physical Therapist (PT)</option>
                                             <option value="occupational-therapist">Occupational Therapist (OT)</option>
                                             <option value="speech-pathologist">Speech-Language Pathologist (SLP)</option>
                                             <option value="care-coordinator">Care Coordinator</option>
@@ -765,6 +755,13 @@
                                 <div class="mb-3">
                                     <label for="coverLetter" class="form-label">Cover Letter / Additional Information</label>
                                     <textarea class="form-control" id="coverLetter" name="coverLetter" rows="5" placeholder="Tell us why you'd like to join our team..."></textarea>
+                                </div>
+
+                                <!-- CAPTCHA -->
+                                <div class="mb-3">
+                                    <label for="captcha" class="form-label">Security Check: What is 2 + 2? <span class="text-danger">*</span></label>
+                                    <input type="number" class="form-control" id="captcha" name="captcha" required placeholder="Enter your answer" min="0" max="99">
+                                    <small class="text-muted">Please answer this simple question to prevent spam</small>
                                 </div>
 
                                 <div class="mb-4">
@@ -844,8 +841,8 @@
                 <div class="col-md-6 col-lg-3">
                     <h5>Business Hours</h5>
                     <p>Monday - Friday: 8:00 AM - 6:00 PM<br>
-                    Saturday: By Appointment<br>
-                    Sunday: Closed</p>
+                    Saturday: 8:00 AM - 2:00 PM<br>
+                    Sunday: By Appointment</p>
                     <p class="mt-3"><strong>24/7 Emergency Support Available</strong></p>
                 </div>
             </div>
@@ -863,6 +860,13 @@
     <script>
         document.getElementById('careerForm').addEventListener('submit', async function(e) {
             e.preventDefault();
+
+            // Check CAPTCHA
+            const captchaValue = parseInt(document.getElementById('captcha').value);
+            if (captchaValue !== 4) {
+                showMessage('error', 'Incorrect Answer', 'Please answer the security question correctly (2 + 2 = ?)');
+                return;
+            }
 
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalBtnText = submitBtn.innerHTML;
