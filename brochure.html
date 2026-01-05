@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delite Health Care Plus LLC - Brochure</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css">
+
+    <style>
+        :root {
+            --primary-blue: #2563eb;
+            --dark-blue: #1e40af;
+            --light-blue: #dbeafe;
+            --accent-red: #dc2626;
+            --text-dark: #1f2937;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            background: white;
+            line-height: 1.6;
+        }
+
+        /* Print-friendly A4 size */
+        .brochure-container {
+            width: 8.5in;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        /* Header Section */
+        .brochure-header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .brochure-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .brochure-header .tagline {
+            font-size: 1.2rem;
+            font-weight: 300;
+            opacity: 0.95;
+            margin-bottom: 20px;
+        }
+
+        .brochure-header .contact-quick {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            font-size: 0.95rem;
+        }
+
+        .contact-quick i {
+            margin-right: 8px;
+            font-size: 1.1rem;
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: var(--light-blue);
+            padding: 30px 40px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 10px;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        /* Content Section */
+        .brochure-content {
+            padding: 40px;
+        }
+
+        .section-title {
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--primary-blue);
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .service-card {
+            background: white;
+            border: 2px solid var(--light-blue);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: var(--primary-blue);
+            box-shadow: 0 5px 20px rgba(37, 99, 235, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 15px;
+        }
+
+        .service-card h3 {
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .column-content h3 {
+            color: var(--primary-blue);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .column-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .column-content ul li {
+            padding: 8px 0;
+            font-size: 0.95rem;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .column-content ul li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Service Areas */
+        .service-areas {
+            background: var(--light-blue);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .service-areas h3 {
+            color: var(--primary-blue);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            text-align: center;
+        }
+
+        .area-badge {
+            background: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        /* Footer Contact Section */
+        .brochure-footer {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-blue) 100%);
+            color: white;
+            padding: 40px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+        }
+
+        .contact-item i {
+            font-size: 1.3rem;
+            width: 30px;
+        }
+
+        .hours-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .hours-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.95rem;
+        }
+
+        .hours-item:last-child {
+            border-bottom: none;
+        }
+
+        .cta-section {
+            background: white;
+            color: var(--text-dark);
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .cta-section h3 {
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 0;
+        }
+
+        .cta-section .phone-large {
+            color: var(--accent-red);
+            font-size: 2rem;
+            font-weight: 800;
+            margin-top: 10px;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+            }
+
+            .brochure-container {
+                width: 100%;
+                box-shadow: none;
+            }
+
+            .service-card:hover {
+                transform: none;
+            }
+        }
+
+        @page {
+            size: letter;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="brochure-container">
+
+        <!-- Header -->
+        <div class="brochure-header">
+            <h1>DELITE HEALTH CARE PLUS LLC</h1>
+            <div class="tagline">Compassionate Care, Professional Excellence</div>
+            <div class="contact-quick">
+                <div><i class="bi bi-telephone-fill"></i> (781) 967-4014</div>
+                <div><i class="bi bi-envelope-fill"></i> care@delitehealthcare.com</div>
+                <div><i class="bi bi-geo-alt-fill"></i> Burlington, MA</div>
+            </div>
+        </div>
+
+        <!-- Stats Bar -->
+        <div class="stats-bar">
+            <div class="stat-item">
+                <span class="stat-number">10+</span>
+                <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">500+</span>
+                <span class="stat-label">Families Served</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">98%</span>
+                <span class="stat-label">Satisfaction Rate</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Care Professionals</span>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="brochure-content">
+
+            <!-- Services Section -->
+            <h2 class="section-title">Our Care Solutions</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="bi bi-heart-pulse-fill"></i>
+                    </div>
+                    <h3>Skilled Nursing</h3>
+                    <p>Certified nurses providing medication management, wound care, chronic disease management, and post-surgical care in your home.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="bi bi-house-heart-fill"></i>
+                    </div>
+                    <h3>Home Care Services</h3>
+                    <p>Personal assistance with daily activities, companionship, meal preparation, and light housekeeping to maintain independence.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="bi bi-people-fill"></i>
+                    </div>
+                    <h3>Medical Staffing</h3>
+                    <p>Professional healthcare staffing solutions including CNAs, HHAs, and specialized medical professionals for facilities.</p>
+                </div>
+            </div>
+
+            <!-- Two Column Content -->
+            <div class="two-column">
+                <div class="column-content">
+                    <h3>Why Choose Delite Health Care?</h3>
+                    <ul>
+                        <li>Personalized, patient-centered care plans</li>
+                        <li>Licensed and certified healthcare professionals</li>
+                        <li>Available 24/7 for emergencies and support</li>
+                        <li>Comprehensive background checks on all staff</li>
+                        <li>Culturally sensitive care approach</li>
+                        <li>Flexible scheduling to meet your needs</li>
+                        <li>Transparent communication with families</li>
+                        <li>Ongoing staff training and development</li>
+                    </ul>
+                </div>
+
+                <div class="column-content">
+                    <h3>Specialized Care Services</h3>
+                    <ul>
+                        <li>Medication administration & management</li>
+                        <li>Wound care & IV therapy</li>
+                        <li>Chronic disease management</li>
+                        <li>Post-surgical & rehabilitation support</li>
+                        <li>Dementia & Alzheimer's care</li>
+                        <li>Respite care for family caregivers</li>
+                        <li>End-of-life & palliative care</li>
+                        <li>Personal care & hygiene assistance</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Service Areas -->
+            <div class="service-areas">
+                <h3>Communities We Serve</h3>
+                <div class="areas-grid">
+                    <div class="area-badge">Burlington</div>
+                    <div class="area-badge">Lexington</div>
+                    <div class="area-badge">Belmont</div>
+                    <div class="area-badge">Arlington</div>
+                    <div class="area-badge">Waltham</div>
+                    <div class="area-badge">Weston</div>
+                    <div class="area-badge">Woburn</div>
+                    <div class="area-badge">Billerica</div>
+                    <div class="area-badge">Bedford</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer Contact -->
+        <div class="brochure-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <div>
+                                <strong>1500 District Avenue</strong><br>
+                                Burlington, MA 01803
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="bi bi-telephone-fill"></i>
+                            <div>
+                                <strong>Phone:</strong> +1 (781) 967-4014
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="bi bi-envelope-fill"></i>
+                            <div>
+                                <strong>Email:</strong> care@delitehealthcare.com
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="bi bi-globe"></i>
+                            <div>
+                                <strong>Website:</strong> www.DeliteHealthCare.com
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Business Hours</h3>
+                    <div class="hours-list">
+                        <div class="hours-item">
+                            <span><strong>Monday - Friday</strong></span>
+                            <span>9:00 AM - 5:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span><strong>Saturday</strong></span>
+                            <span>8:00 AM - 2:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span><strong>Sunday</strong></span>
+                            <span>By Appointment</span>
+                        </div>
+                        <div class="hours-item" style="border-top: 2px solid rgba(255,255,255,0.3); padding-top: 15px; margin-top: 10px;">
+                            <span colspan="2" style="text-align: center; width: 100%;"><strong>24/7 Emergency Support Available</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="cta-section">
+                <h3>Ready to Get Started?</h3>
+                <p>Contact us today for a free consultation</p>
+                <div class="phone-large">(781) 967-4014</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Print Instructions -->
+    <div style="text-align: center; padding: 30px; color: #666; font-size: 0.9rem;">
+        <p><strong>To save as PDF:</strong> Press Ctrl+P (Windows) or Cmd+P (Mac), then select "Save as PDF"</p>
+    </div>
+
+</body>
+</html>
