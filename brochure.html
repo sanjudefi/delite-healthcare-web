@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delite Health Care Plus LLC - Brochure</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Delite Health Care Plus LLC - Professional Brochure</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css">
 
     <style>
@@ -14,6 +14,7 @@
             --light-blue: #dbeafe;
             --accent-red: #dc2626;
             --text-dark: #1f2937;
+            --medical-teal: #0891b2;
         }
 
         * {
@@ -25,135 +26,336 @@
         body {
             font-family: 'Poppins', sans-serif;
             color: var(--text-dark);
-            background: white;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
             line-height: 1.6;
+            padding: 30px 20px;
         }
 
-        /* Print-friendly A4 size */
+        /* Download Button - Fixed Position */
+        .download-btn-fixed {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, var(--accent-red) 0%, #b91c1c 100%);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(220, 38, 38, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(220, 38, 38, 0.5);
+        }
+
+        .download-btn i {
+            font-size: 1.3rem;
+        }
+
+        /* Brochure Container */
         .brochure-container {
-            width: 8.5in;
+            max-width: 8.5in;
             margin: 0 auto;
             background: white;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 50px rgba(0,0,0,0.15);
+            overflow: hidden;
+            border-radius: 20px;
         }
 
-        /* Header Section */
-        .brochure-header {
+        /* Hero Header with Logo */
+        .hero-header {
             background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            padding: 50px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .hero-header::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 30px;
+            align-items: center;
             color: white;
-            padding: 40px;
-            text-align: center;
         }
 
-        .brochure-header h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 10px;
+        .logo-section {
+            background: white;
+            width: 120px;
+            height: 120px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        .logo-icon {
+            font-size: 4rem;
+            background: linear-gradient(135deg, var(--primary-blue), var(--medical-teal));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo-pulse {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 140px;
+            height: 140px;
+            border: 3px solid rgba(37, 99, 235, 0.3);
+            border-radius: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+            50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.5; }
+        }
+
+        .company-info h1 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            margin-bottom: 8px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            line-height: 1.2;
         }
 
-        .brochure-header .tagline {
-            font-size: 1.2rem;
+        .company-info .tagline {
+            font-size: 1.3rem;
             font-weight: 300;
             opacity: 0.95;
             margin-bottom: 20px;
         }
 
-        .brochure-header .contact-quick {
+        .quick-contact {
             display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 20px;
+            gap: 25px;
+            flex-wrap: wrap;
             font-size: 0.95rem;
         }
 
-        .contact-quick i {
-            margin-right: 8px;
+        .quick-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .quick-contact-item i {
             font-size: 1.1rem;
         }
 
-        /* Stats Bar */
+        /* Medical Image Banner */
+        .medical-banner {
+            height: 250px;
+            background: linear-gradient(rgba(37, 99, 235, 0.85), rgba(30, 64, 175, 0.85)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23dbeafe" width="1200" height="400"/><circle cx="200" cy="200" r="80" fill="%232563eb" opacity="0.1"/><circle cx="600" cy="150" r="100" fill="%231e40af" opacity="0.1"/><circle cx="1000" cy="250" r="90" fill="%230891b2" opacity="0.1"/></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .medical-icons-overlay {
+            display: flex;
+            gap: 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .medical-icon-circle {
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 3px solid rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .medical-icon-circle:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+
+        .medical-icon-circle:nth-child(3) {
+            animation-delay: 1s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* Stats Section */
         .stats-bar {
             background: var(--light-blue);
-            padding: 30px 40px;
+            padding: 40px;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            gap: 30px;
             text-align: center;
+            border-bottom: 5px solid var(--primary-blue);
         }
 
         .stat-item {
-            padding: 10px;
+            padding: 15px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
         }
 
         .stat-number {
             display: block;
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--primary-blue);
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary-blue), var(--medical-teal));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             line-height: 1;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .stat-label {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: var(--text-dark);
-            font-weight: 500;
+            font-weight: 600;
         }
 
         /* Content Section */
         .brochure-content {
-            padding: 40px;
+            padding: 50px 40px;
         }
 
         .section-title {
             color: var(--primary-blue);
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid var(--primary-blue);
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 4px solid var(--primary-blue);
+            position: relative;
         }
 
-        /* Services Grid */
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background: var(--accent-red);
+        }
+
+        /* Services Grid with Images */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 25px;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         .service-card {
             background: white;
             border: 2px solid var(--light-blue);
-            border-radius: 12px;
-            padding: 25px;
-            text-align: center;
+            border-radius: 20px;
+            overflow: hidden;
             transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
         }
 
         .service-card:hover {
             border-color: var(--primary-blue);
-            box-shadow: 0 5px 20px rgba(37, 99, 235, 0.2);
-            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.25);
+            transform: translateY(-8px);
         }
 
-        .service-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
-            color: white;
-            border-radius: 50%;
+        .service-image {
+            height: 140px;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--medical-teal) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            margin: 0 auto 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+        }
+
+        .service-image i {
+            font-size: 4rem;
+            color: white;
+            z-index: 2;
+            position: relative;
+        }
+
+        .service-content {
+            padding: 25px;
         }
 
         .service-card h3 {
             color: var(--primary-blue);
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 12px;
         }
@@ -161,7 +363,7 @@
         .service-card p {
             font-size: 0.9rem;
             color: #555;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         /* Two Column Layout */
@@ -172,11 +374,25 @@
             margin-bottom: 40px;
         }
 
+        .column-content {
+            background: linear-gradient(to bottom, #f8fafc 0%, white 100%);
+            padding: 30px;
+            border-radius: 20px;
+            border: 2px solid var(--light-blue);
+        }
+
         .column-content h3 {
             color: var(--primary-blue);
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: 700;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .column-content h3 i {
+            font-size: 1.6rem;
         }
 
         .column-content ul {
@@ -185,151 +401,247 @@
         }
 
         .column-content ul li {
-            padding: 8px 0;
+            padding: 10px 0;
             font-size: 0.95rem;
             position: relative;
-            padding-left: 25px;
+            padding-left: 30px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .column-content ul li:last-child {
+            border-bottom: none;
         }
 
         .column-content ul li:before {
             content: "✓";
             position: absolute;
             left: 0;
-            color: var(--primary-blue);
+            color: white;
             font-weight: bold;
-            font-size: 1.1rem;
+            font-size: 0.9rem;
+            background: linear-gradient(135deg, var(--primary-blue), var(--medical-teal));
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: 8px;
         }
 
         /* Service Areas */
         .service-areas {
-            background: var(--light-blue);
-            padding: 25px;
-            border-radius: 12px;
-            margin-bottom: 30px;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            padding: 35px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
         }
 
         .service-areas h3 {
-            color: var(--primary-blue);
-            font-size: 1.3rem;
+            color: white;
+            font-size: 1.6rem;
             font-weight: 700;
-            margin-bottom: 15px;
+            margin-bottom: 25px;
             text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .service-areas h3 i {
+            font-size: 1.8rem;
         }
 
         .areas-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            text-align: center;
+            gap: 15px;
         }
 
         .area-badge {
             background: white;
-            padding: 10px 15px;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--text-dark);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            padding: 15px 20px;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .area-badge:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
         }
 
         /* Footer Contact Section */
         .brochure-footer {
-            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-blue) 100%);
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
             color: white;
-            padding: 40px;
+            padding: 50px 40px;
         }
 
         .footer-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            gap: 50px;
+            margin-bottom: 40px;
         }
 
         .footer-section h3 {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             color: white;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .footer-section h3 i {
+            font-size: 1.6rem;
+            color: var(--accent-red);
         }
 
         .contact-info {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 20px;
         }
 
         .contact-item {
             display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 0.95rem;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.1);
         }
 
         .contact-item i {
-            font-size: 1.3rem;
-            width: 30px;
+            font-size: 1.5rem;
+            width: 35px;
+            color: var(--accent-red);
         }
 
         .hours-list {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
         }
 
         .hours-item {
             display: flex;
             justify-content: space-between;
-            padding: 8px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
             font-size: 0.95rem;
         }
 
-        .hours-item:last-child {
-            border-bottom: none;
+        .emergency-notice {
+            background: linear-gradient(135deg, var(--accent-red), #b91c1c);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 15px;
+            box-shadow: 0 5px 20px rgba(220, 38, 38, 0.4);
         }
 
+        /* CTA Section */
         .cta-section {
-            background: white;
-            color: var(--text-dark);
-            padding: 25px;
-            border-radius: 12px;
-            margin-top: 30px;
+            background: linear-gradient(135deg, white, #f0f9ff);
+            padding: 40px;
+            border-radius: 20px;
             text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
         .cta-section h3 {
             color: var(--primary-blue);
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-size: 2rem;
+            font-weight: 800;
             margin-bottom: 15px;
         }
 
         .cta-section p {
-            font-size: 1.1rem;
-            margin-bottom: 0;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
         }
 
-        .cta-section .phone-large {
+        .phone-large {
             color: var(--accent-red);
-            font-size: 2rem;
-            font-weight: 800;
-            margin-top: 10px;
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .phone-large i {
+            animation: ring 2s infinite;
+        }
+
+        @keyframes ring {
+            0%, 100% { transform: rotate(0deg); }
+            10%, 30% { transform: rotate(-15deg); }
+            20% { transform: rotate(15deg); }
+        }
+
+        /* Print Instructions */
+        .print-instructions {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 0.95rem;
+            background: rgba(37, 99, 235, 0.05);
+            border-radius: 15px;
+            margin: 30px 20px;
+        }
+
+        .print-instructions strong {
+            color: var(--primary-blue);
         }
 
         /* Print Styles */
         @media print {
             body {
                 background: white;
+                padding: 0;
             }
 
             .brochure-container {
-                width: 100%;
+                max-width: 100%;
                 box-shadow: none;
+                border-radius: 0;
             }
 
-            .service-card:hover {
+            .download-btn-fixed,
+            .print-instructions {
+                display: none !important;
+            }
+
+            .service-card:hover,
+            .stat-item:hover,
+            .area-badge:hover {
                 transform: none;
+            }
+
+            .medical-icon-circle {
+                animation: none;
             }
         }
 
@@ -337,19 +649,92 @@
             size: letter;
             margin: 0;
         }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .logo-section {
+                margin: 0 auto;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-bar {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .areas-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
     </style>
 </head>
 <body>
+
+    <!-- Download Button - Fixed -->
+    <div class="download-btn-fixed">
+        <button class="download-btn" onclick="window.print()">
+            <i class="bi bi-file-earmark-pdf-fill"></i>
+            Download High-Res PDF
+        </button>
+    </div>
+
     <div class="brochure-container">
 
-        <!-- Header -->
-        <div class="brochure-header">
-            <h1>DELITE HEALTH CARE PLUS LLC</h1>
-            <div class="tagline">Compassionate Care, Professional Excellence</div>
-            <div class="contact-quick">
-                <div><i class="bi bi-telephone-fill"></i> (781) 967-4014</div>
-                <div><i class="bi bi-envelope-fill"></i> care@delitehealthcare.com</div>
-                <div><i class="bi bi-geo-alt-fill"></i> Burlington, MA</div>
+        <!-- Hero Header with Logo -->
+        <div class="hero-header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-pulse"></div>
+                    <i class="bi bi-heart-pulse-fill logo-icon"></i>
+                </div>
+                <div class="company-info">
+                    <h1>DELITE HEALTH CARE PLUS LLC</h1>
+                    <div class="tagline">Compassionate Care, Professional Excellence</div>
+                    <div class="quick-contact">
+                        <div class="quick-contact-item">
+                            <i class="bi bi-telephone-fill"></i>
+                            <span>(781) 967-4014</span>
+                        </div>
+                        <div class="quick-contact-item">
+                            <i class="bi bi-envelope-fill"></i>
+                            <span>care@delitehealthcare.com</span>
+                        </div>
+                        <div class="quick-contact-item">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <span>Burlington, MA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Medical Image Banner -->
+        <div class="medical-banner">
+            <div class="medical-icons-overlay">
+                <div class="medical-icon-circle">
+                    <i class="bi bi-heart-pulse-fill"></i>
+                </div>
+                <div class="medical-icon-circle">
+                    <i class="bi bi-house-heart-fill"></i>
+                </div>
+                <div class="medical-icon-circle">
+                    <i class="bi bi-people-fill"></i>
+                </div>
             </div>
         </div>
 
@@ -377,37 +762,46 @@
         <div class="brochure-content">
 
             <!-- Services Section -->
-            <h2 class="section-title">Our Care Solutions</h2>
+            <h2 class="section-title">Our Comprehensive Care Solutions</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">
+                    <div class="service-image">
                         <i class="bi bi-heart-pulse-fill"></i>
                     </div>
-                    <h3>Skilled Nursing</h3>
-                    <p>Certified nurses providing medication management, wound care, chronic disease management, and post-surgical care in your home.</p>
+                    <div class="service-content">
+                        <h3>Skilled Nursing</h3>
+                        <p>Licensed nurses providing medication management, wound care, chronic disease management, and post-surgical care in the comfort of your home.</p>
+                    </div>
                 </div>
 
                 <div class="service-card">
-                    <div class="service-icon">
+                    <div class="service-image">
                         <i class="bi bi-house-heart-fill"></i>
                     </div>
-                    <h3>Home Care Services</h3>
-                    <p>Personal assistance with daily activities, companionship, meal preparation, and light housekeeping to maintain independence.</p>
+                    <div class="service-content">
+                        <h3>Home Care Services</h3>
+                        <p>Compassionate personal assistance with daily activities, companionship, meal preparation, and light housekeeping to maintain independence.</p>
+                    </div>
                 </div>
 
                 <div class="service-card">
-                    <div class="service-icon">
+                    <div class="service-image">
                         <i class="bi bi-people-fill"></i>
                     </div>
-                    <h3>Medical Staffing</h3>
-                    <p>Professional healthcare staffing solutions including CNAs, HHAs, and specialized medical professionals for facilities.</p>
+                    <div class="service-content">
+                        <h3>Medical Staffing</h3>
+                        <p>Professional healthcare staffing solutions including CNAs, HHAs, and specialized medical professionals for healthcare facilities.</p>
+                    </div>
                 </div>
             </div>
 
             <!-- Two Column Content -->
             <div class="two-column">
                 <div class="column-content">
-                    <h3>Why Choose Delite Health Care?</h3>
+                    <h3>
+                        <i class="bi bi-award-fill"></i>
+                        Why Choose Delite Health Care?
+                    </h3>
                     <ul>
                         <li>Personalized, patient-centered care plans</li>
                         <li>Licensed and certified healthcare professionals</li>
@@ -421,7 +815,10 @@
                 </div>
 
                 <div class="column-content">
-                    <h3>Specialized Care Services</h3>
+                    <h3>
+                        <i class="bi bi-clipboard2-pulse-fill"></i>
+                        Specialized Care Services
+                    </h3>
                     <ul>
                         <li>Medication administration & management</li>
                         <li>Wound care & IV therapy</li>
@@ -437,7 +834,10 @@
 
             <!-- Service Areas -->
             <div class="service-areas">
-                <h3>Communities We Serve</h3>
+                <h3>
+                    <i class="bi bi-geo-fill"></i>
+                    Communities We Proudly Serve
+                </h3>
                 <div class="areas-grid">
                     <div class="area-badge">Burlington</div>
                     <div class="area-badge">Lexington</div>
@@ -457,38 +857,48 @@
         <div class="brochure-footer">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Contact Information</h3>
+                    <h3>
+                        <i class="bi bi-phone-vibrate-fill"></i>
+                        Contact Information
+                    </h3>
                     <div class="contact-info">
                         <div class="contact-item">
                             <i class="bi bi-geo-alt-fill"></i>
                             <div>
-                                <strong>1500 District Avenue</strong><br>
+                                <strong>Office Address</strong><br>
+                                1500 District Avenue<br>
                                 Burlington, MA 01803
                             </div>
                         </div>
                         <div class="contact-item">
                             <i class="bi bi-telephone-fill"></i>
                             <div>
-                                <strong>Phone:</strong> +1 (781) 967-4014
+                                <strong>Phone</strong><br>
+                                +1 (781) 967-4014
                             </div>
                         </div>
                         <div class="contact-item">
                             <i class="bi bi-envelope-fill"></i>
                             <div>
-                                <strong>Email:</strong> care@delitehealthcare.com
+                                <strong>Email</strong><br>
+                                care@delitehealthcare.com
                             </div>
                         </div>
                         <div class="contact-item">
                             <i class="bi bi-globe"></i>
                             <div>
-                                <strong>Website:</strong> www.DeliteHealthCare.com
+                                <strong>Website</strong><br>
+                                www.DeliteHealthCare.com
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="footer-section">
-                    <h3>Business Hours</h3>
+                    <h3>
+                        <i class="bi bi-clock-fill"></i>
+                        Business Hours
+                    </h3>
                     <div class="hours-list">
                         <div class="hours-item">
                             <span><strong>Monday - Friday</strong></span>
@@ -502,9 +912,9 @@
                             <span><strong>Sunday</strong></span>
                             <span>By Appointment</span>
                         </div>
-                        <div class="hours-item" style="border-top: 2px solid rgba(255,255,255,0.3); padding-top: 15px; margin-top: 10px;">
-                            <span colspan="2" style="text-align: center; width: 100%;"><strong>24/7 Emergency Support Available</strong></span>
-                        </div>
+                    </div>
+                    <div class="emergency-notice">
+                        <i class="bi bi-bell-fill"></i> 24/7 Emergency Support Available
                     </div>
                 </div>
             </div>
@@ -512,16 +922,24 @@
             <!-- Call to Action -->
             <div class="cta-section">
                 <h3>Ready to Get Started?</h3>
-                <p>Contact us today for a free consultation</p>
-                <div class="phone-large">(781) 967-4014</div>
+                <p>Contact us today for a free consultation and learn how we can help you or your loved ones</p>
+                <div class="phone-large">
+                    <i class="bi bi-telephone-fill"></i>
+                    (781) 967-4014
+                </div>
+                <p style="margin-top: 20px; font-size: 1rem; font-weight: 600; color: var(--primary-blue);">
+                    We're here to provide the compassionate care your family deserves
+                </p>
             </div>
         </div>
 
     </div>
 
     <!-- Print Instructions -->
-    <div style="text-align: center; padding: 30px; color: #666; font-size: 0.9rem;">
-        <p><strong>To save as PDF:</strong> Press Ctrl+P (Windows) or Cmd+P (Mac), then select "Save as PDF"</p>
+    <div class="print-instructions">
+        <p><strong>💡 To Download High-Resolution PDF:</strong></p>
+        <p>Click the "Download High-Res PDF" button above, or press <strong>Ctrl+P</strong> (Windows) / <strong>Cmd+P</strong> (Mac)</p>
+        <p>Select <strong>"Save as PDF"</strong> from the printer options and choose your desired quality settings</p>
     </div>
 
 </body>
